@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE document SYSTEM "./dtd/document-v10.dtd">
+
+<document>
+  <header>
+    <title>Jesktop Developer Documentation</title>
+    <subtitle>Manifests</subtitle>
+    <authors>
+      <person id="PH" name="Paul Hammant" email="Paul_Hammant@yahoo.com"/>
+    </authors>
+    <notice>
+      Jesktop documentation is under construction.  Everything you
+      can find outside this page is to be considered obsolete.
+    </notice>
+  </header>
+  <body>
+    <s1 title="Introduction">
+      <p>
+	Jesktop applications ship in jars.  The jar must contain a manifest that Jesktop can pick up on so that it know's what's inside the jar.  Jesktop's manifest is placed in a directory called JESKTOP-INF inside the jar.  The file name of the manifest is applications.xml and it is in XML format.
+      </p>
+    </s1>
+    <s1 title="A simple example">
+      <p>
+	This xml file contains details of the application that may be included in the jar.  Here is an example:
+      </p>
+      <source>
+&lt;?xml version="1.0"?&gt;
+&lt;applications&gt;
+  &lt;application single-instance="true"&gt;
+    &lt;display-name&gt;Frimble Demo2&lt;/display-name&gt;
+    &lt;launchable-target-name&gt;Demos/FrimbleDemo2&lt;/launchable-target-name&gt;
+    &lt;class&gt;org.jesktop.frimble.demo2.FrimbleDemo2&lt;/class&gt;
+  &lt;/application&gt;
+&lt;/applications&gt;
+      </source>
+      <p>
+        That this says is that there is one application in the jar. It's name for the purposes of lookup is Demos/FrimbleDemo2, it has a certain class for launching and that Jesktop should ponly allow a single instance to run at any one time.
+      </p>
+    </s1>
+    <s1 title="A more complex example">
+      <p>
+        This example details four other concepts.
+      </p>
+      <ol>
+        <li>
+    	  <strong>Muliple apps in one jar</strong> - the application element is repeating.
+        </li>
+        <li>
+          <strong>Default applications</strong> - of use when an application is not being installed, merely run in situ inside it's jar.
+        </li>
+        <li>
+          <strong>Icons to represent apps</strong> - used when listing the app on the start menu or in a file-system view.
+        </li>
+        <li>
+          <strong>Application specific config files</strong> - the config for the app in question is specified elsewhere.
+        </li>
+      </ol>
+      <p>
+        The example:
+      </p>
+      <source>
+&lt;?xml version="1.0"?&gt;
+&lt;applications&gt;
+	&lt;default-application target-name="Tools/Clock"
+	  icon32="org/apache/avalon/jesktop/apps/clock/Clock.gif"
+	  icon16="org/apache/avalon/jesktop/apps/clock/ClockSmall.gif"/&gt;
+	&lt;application&gt;
+		&lt;display-name&gt;Clock&lt;/display-name&gt;
+		&lt;launchable-target-name&gt;Tools/Clock&lt;/launchable-target-name&gt;
+		&lt;class&gt;org.jesktop.apps.clock.Clock&lt;/class&gt;
+	&lt;/application&gt;
+	&lt;application&gt;
+		&lt;display-name&gt;Directory Explorer&lt;/display-name&gt;
+		&lt;launchable-target-name&gt;Tools/DirectoryExplorer&lt;/launchable-target-name&gt;
+		&lt;class&gt;org.jesktop.windowmanagers.DirectoryExplorer&lt;/class&gt;
+	&lt;/application&gt;
+	&lt;application&gt;
+		&lt;display-name&gt;Text Viewer&lt;/display-name&gt;
+		&lt;launchable-target-name&gt;Tools/TextViewer&lt;/launchable-target-name&gt;
+		&lt;class&gt;org.jesktop.apps.notepad.TextViewer&lt;/class&gt;
+	&lt;/application&gt;
+	&lt;application&gt;
+		&lt;display-name&gt;Image Viewer&lt;/display-name&gt;
+		&lt;launchable-target-name&gt;Tools/ImageViewer&lt;/launchable-target-name&gt;
+		&lt;class&gt;org.jesktop.apps.imageviewer.ImageViewer&lt;/class&gt;
+		&lt;application-config-file&gt;org/apache/avalon/jesktop/apps/imageviewer/ImageViewer.xml&lt;/application-config-file&gt;
+	&lt;/application&gt;
+	&lt;application&gt;
+		&lt;display-name&gt;Drag Monitor&lt;/display-name&gt;
+		&lt;launchable-target-name&gt;Tools/Misc/DragMonitor&lt;/launchable-target-name&gt;
+		&lt;class&gt;org.jesktop.apps.misc.DragMonitor&lt;/class&gt;
+	&lt;/application&gt;
+&lt;/applications&gt;
+      </source>
+      <p>
+        The application specific file for Imageviewer.  The file name is <em>org/apache/avalon/jesktop/apps/imageviewer/ImageViewer.xml</em>:
+      </p>
+      <source>
+&lt;?xml version="1.0"?&gt;
+&lt;application&gt;
+  &lt;icons icon32="org/apache/avalon/jesktop/apps/imageviewer/ImageViewer32.gif"
+    icon16="org/apache/avalon/jesktop/apps/imageviewer/ImageViewer16.gif" /&gt;
+&lt;/application&gt;
+      </source>
+    </s1>
+    <s1 title="Additional Jars">
+      <p>
+        Each jar that contains application may also contain other jars containing classes or resources that must be mounted in the classpath during execution.  The following snippet illustrates Sun's XML parser and how an manifests may specify them as contained within the distribution.  They follow the applications element in the applications.xml manifest.
+      </p>
+      <source>
+&lt;additional-jars&gt;
+  &lt;jar where="contained"&gt;lib/jaxp.jar&lt;/jar&gt;
+  &lt;jar where="contained"&gt;lib/parser.jar&lt;/jar&gt;
+&lt;/additional-jars&gt;
+      </source>
+      <p>
+        This additional jar element may also indicate jars that are not contained within the distribution jar.  The following shows this in use:
+      </p>
+      <source>
+&lt;additional-jars&gt;
+  &lt;jar where="remote"&gt;http://somewhere.com/some/thing.jar&lt;/jar&gt;
+&lt;/additional-jars&gt;
+      </source>
+    </s1>
+    <s1 title="Rules">
+      <p>
+        There are a number of rules to the use of this manifest.
+      </p>
+      <ol>
+        <li>
+    	  <strong>Targets are launchable.</strong> Each application entry is a separate launchable target.  Multiple apps may share tha same code base and will be loaded via the same classloader so must be able to co-exist with ench other in one VM sharing static space.
+        </li>
+        <li>
+          <strong>Targets are launchable multiple times.</strong> Unless the single-instance="true" attrible has been specified the target may be launched multiple times.  A classloading issue again in that static must be used carefully.
+        </li>
+        <li>
+          <strong>JComponent or JFrimble devived class</strong> The class that Jesktop instantiates must be a subclass of JComponent or JFrimble.  JFrame is <strong>not</strong> allowed on this class.  Use one of the alternative Frimble solutions instead.
+        </li>
+      </ol>
+    </s1>
+    <s1 title="Interoperation with the normal jar manifest">
+      <p>
+        If you want to have an application that is dual mode in that it can run standalone as well as inside Jesktop, you'll want to have a META-INF/manifest.mf file that specifies the executable nature of the jar.  This normal Java feature is completely supported.
+      </p>
+    </s1>
+  </body>
+  <footer>
+    <legal>
+      Copyright (c) @year@ The Jesktop Project All rights reserved.
+    </legal>
+  </footer>
+</document>

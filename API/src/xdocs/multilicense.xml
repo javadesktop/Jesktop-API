@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE document SYSTEM "./dtd/document-v10.dtd">
+
+<document>
+  <header>
+    <title>Jesktop Documentation</title>
+    <subtitle>Multi license environment</subtitle>
+    <authors>
+      <person id="WB" name="William Beebe" email="whbeebe@earthlink.net"/>
+      <person id="PH" name="Paul Hammant" email="Paul_Hammant@yahoo.com"/>
+    </authors>
+    <notice>
+      Jesktop documentation is under construction.  Everything you
+      can find outside this page is to be considered obsolete.
+    </notice>
+  </header>
+  <body>
+    <s1 title="Overview">
+      <p>
+	The Jesktop API is licensed as BSD license.  
+      </p>
+    </s1>
+    <s1 title="Open Source Software (OSS)">
+      <p>
+	The Jesktop API is fully compatible with all OSI approved software. See <link href="http://www.opensource.org/licenses/index.html">http://www.opensource.org/licenses/index.html</link>.  
+      </p>	
+      <p>
+	Whatever the license of you opensource project, the changes are it is perfectly valid for it to use the Jesktop API.
+      </p>
+    </s1>
+    <s1 title="Commercial/Proprietory Software">
+      <p>
+	Commercial software can be written for Jesktop too.  Code using the Jesktop API can be kept proprietory - no problem.
+      </p>
+    </s1>
+  </body>
+  <footer>
+    <legal>
+      Copyright (c) @year@ The Jesktop Project All rights reserved.
+    </legal>
+  </footer>
+</document>

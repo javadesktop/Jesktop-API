@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE document SYSTEM "./dtd/document-v10.dtd">
+
+<document>
+  <header>
+    <title>Jesktop Documentation</title>
+    <subtitle>Where Jesktop is heading</subtitle>
+    <authors>
+      <person id="WB" name="William Beebe" email="whbeebe@earthlink.net"/>
+      <person id="PH" name="Paul Hammant" email="Paul_Hammant@yahoo.com"/>
+    </authors>
+    <notice>
+      Jesktop documentation is under construction.  Everything you
+      can find outside this page is to be considered obsolete.
+    </notice>
+  </header>
+  <body>
+    <s1 title="The future">
+      <p>     
+	The development of Jesktop is closely mirroring that of Avalon.  Avalon
+	will gain server blocks (http, smtp, pop3 imap, dns, nntp ++++).  At the
+	same time Jesktop will gain applications too. the majority of those will
+	not be from the Jesktop team but from the other formerly unrelated
+	projects.  These teams hopefully will make their apps dual mode -
+	capable of running from the command line and inside Jesktop.
+      </p>	
+      <p>     
+	We also see ourselves extending the functionality of the desktop
+	itself. All of these features are planned (some will rely on
+	improvements to Avalon).      
+      </p>
+      <ul>
+        <li>
+          Multi lingual desktop.
+        </li>
+        <li>
+          User login and log out
+        </li>
+        <li>
+          Improved Mime type support - Mime type aware panels will be usable in The File browser and web browser
+        </li>
+        <li>
+        New Window Managers.
+	  - Mac, Next, Amiga, Beos....
+
+        </li>
+        <li>
+          Hot Window Manager changing (just like KDE, Gnome etc. under linux) - log off, choose new WM, log in.
+        </li>
+        <li>
+          Patching of AWT usage to Swing - this will allow Java 1 applet support without the well known "heavyweight component in lightweight container" feature/bug.
+        </li>
+        <li>
+	  Support for Tear-off Applets - In your browser, choose "tear-off applet" while mouse is over applet in web page  - this will install that applet as an app, and not require that you are subsequently connected to the internet to use it.        
+        </li>
+        <li>
+	  Remote usage, Connect via an remote stub application, applet, or remote Java Web Start (TM) app.       
+        </li>
+        <li>
+ 	  Better control of window positions and size at launch.        
+        </li>
+        <li>
+	  More Shells.  - Ant may well be improved soon so that all of its commands can be invoked from a command line type console inside Jesktop. - we will also have commands that are Avalon and Jesktop specific e.g. "Shutdown".      
+        </li>
+        <li>	  
+          Security polices for Jars. - things like clock that require no special resources, can run inside a sandbox. - other applications can ask for permission to read/write to specific directories and other permissions.
+        </li>        
+      </ul>           
+    </s1>
+  </body>
+  <footer>
+    <legal>
+      Copyright (c) @year@ The Jesktop Project All rights reserved.
+    </legal>
+  </footer>
+</document>

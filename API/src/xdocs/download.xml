@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE document SYSTEM "./dtd/document-v10.dtd">
+
+<document>
+  <header>
+    <title>Jesktop Documentation</title>
+    <subtitle>Downloads</subtitle>
+    <authors>
+      <person id="WB" name="William Beebe" email="whbeebe@earthlink.net"/>
+      <person id="PH" name="Paul Hammant" email="Paul_Hammant@yahoo.com"/>
+    </authors>
+    <notice>
+      Jesktop documentation is under construction.  Everything you
+      can find outside this page is to be considered obsolete.
+    </notice>
+  </header>
+  <body>
+    <s1 title="About Downloading">
+      <p>
+       <strong>Using Netscape or Mozilla?</strong> If you're using Netscape for downloading, you might want to use the "Save As" feature as prompted via a right click.  This is because Netscape thinks it should install jars into itself if left-clicked.  Doh!
+      </p>
+    </s1>
+    <s1 title="Jesktop Implementation">
+      <p>
+        This is hosted by Apache as part of Avalon's Cornerstone project.<link href="http://jakarta.apache.org/builds/jakarta-avalon/nightly/">here</link>.  Download one of the latest Cornerstones and build the app.
+      </p>
+      <p>
+        Alternatively, you can download a recent snapshot of a ready to run Jesktop in zip form <link href="jesktop.zip">here</link>.  After unzipping it, go into directory jakarta-avalon-phoenix/dist/bin and execute the appropriate "run" batch/shell file.  It is about 2 Megabytes in size to download.
+      </p>
+    </s1>    
+    <s1 title="Applications for Jesktop">
+      <p>
+        Applications for Jesktop are listed on the <link href="http://www.jesktop.net">www.jesktop.net</link> website.  There are a couple of applications that come with Jesktop from the Apache site - "Explorer" and some miscellaenous apps.
+      </p>
+    </s1>
+    <s1 title="Jesktop API Source">
+      <p><strong>If you want to download and compile your own version of Jesktop API</strong></p>
+      <p>
+	A snapshot of the source depot.  You'll have to do some file copying and run some build scripts before running Jesktop.  Click - <link href="full_source_distributions/Jesktop_API_FullSourceDistribution.zip">zip</link> <link href="full_source_distributions/Jesktop_API_FullSourceDistribution.tar.gz">tar.gz</link>.
+      </p>
+      <p>
+        For a raw view of the directory (so you can see file sizes) <link href="full_source_distributions/index.html">see this</link>.
+      </p>
+      <p>	
+        After downloading and unzipping, all you have to do with this is run the build.bat of build.sh file.  After that, go into phoenoix/bin and launch Jesktop with run.bat or run.sh.  After that launch "Simple Installer" and install applications from <link href="http://www.jesktop.net/apps">http://www.jesktop.net/apps</link>.  These are installable remotely, or you can download them (recommended) first.
+      </p>
+      
+    </s1>
+    <!--
+    <s1 title="Jesktop API without source">
+      <p><strong>If you want to install a pre-built Jesktop in to Avalon (that you have already installed)</strong></p>
+      <p>
+        <strong>Note.</strong> These installables are hot installable over the web, use you regular browser for now (a Jesktop compatible one - one day) to copy the URL to SimpleInstaller.  This will take the application(s) from the web and install them into Jesktop. <strong>However</strong> You might want to use your regular browser's Save-as feature to create local copies of the installable applications and install them from there as you never know when you might want to re-install an application!!
+      </p>
+      <p>
+        For a raw view of the directory (so you can see file sizes) <link href="jesktop-block/index.html">see this</link> for the jesktop sar file.
+      </p>
+      <p>
+	Jesktop's sar file for Avalon 4.0 beta 2. <link href="jesktop-block/jesktop.sar">Click&nbsp;here</link>. If you already have Avalon (3.1a1 only) installed, then this sar file can be deployed into that (minimum version of 10th June 2001).  Just download <link href="http://jakarta.apache.org/builds/jakarta-avalon/nightly/2001-06-10/jakarta-avalon-phoenix-src.tar.gz">Avalon/Phoenix </link> from Apache and put the sar file in the apps directory of Avalon after doing a "build distributables" to make the binary from of Avalon/Pheonix (which you then have to unzip!.
+      </p>
+    </s1>
+    -->
+    <s1 title="Jars and Interfaces for use with other projects">
+      <p><strong>If you are a developer of a GUI app and want to include jars or classes to make it Jesktop compatible.</strong></p>
+      <p>
+        The API for Jesktop contained applications is available <link href="dist/jesktop-frimble.jar">here</link> (@jesktop-frimble.jar.size@).  This is useful if you are planning to create your own Jesktop <strong>compatible</strong> applications.  For your own development, it is sufficuent for you to include the contained classes you jar.
+      </p>
+      <p>
+        Three very simple demos that represent complete jesktop compatible applications are <link href="dist/jesktop-frimble-demoapp1.jar">here</link> (@jesktop-frimble-demoapp1.jar.size@), <link href="dist/jesktop-frimble-demoapp2.jar">here</link> (@jesktop-frimble-demoapp2.jar.size@) and <link href="dist/jesktop-frimble-demoapp3.jar">here</link> (@jesktop-frimble-demoapp3.jar.size@).  They contain source.
+      </p>      
+      <p>
+	FrimbleDemo demonstrates the use of the abstracted Frame/JinternalFrame Frimble library.  FrimbleDemo2 shows an alternative way of doing the same (perhaps simpler).  FrimbleDemo3 (in progress) shows an alternative being compatible with JavaWebStart too.
+      </p>
+      <p>
+        The API for Jesktop's Kernel is available <link href="dist/jesktop-api.jar">here</link> (@jesktop-api.jar.size@).  This is useful if you are planning to create your own Jesktop <strong>aware</strong> applications. This is a deeper and optional level to that above.
+      </p>         
+      <p>
+        For a raw view of the directory (so you can see file sizes) <link href="export/index.html">see this</link>
+      </p>
+    </s1>
+    <s1 title="Downloadable Documentation">
+      <p><strong>If you are a developer and want to read about Jesktop things offline</strong></p>
+      <p>
+        For the API documentation on its own <link href="docs/Jesktop_APIDocumentation.zip">click here for zip</link> and <link href="docs/Jesktop_APIDocumentation.tar.gz">click here for tar.gz</link>
+      </p>
+      <p>
+        For these web pages and API documentation together <link href="docs/Jesktop_FullDocumentation.zip">click here for zip</link> and <link href="docs/Jesktop_FullDocumentation.tar.gz">click here for tar.gz</link>
+      </p>
+      <p>
+        For these web pages and <em>without</em> API documentation <link href="docs/Jesktop_WebDocumentation.zip">click here for zip</link> and <link href="docs/Jesktop_WebDocumentation.tar.gz">click here for tar.gz</link>
+      </p>
+      <p>
+        For a raw view of the directory (so you can see file sizes) <link href="docs/index.html">see this</link>
+      </p>
+    </s1>
+   </body>
+  <footer>
+    <legal>
+      Copyright (c) @year@ The Jesktop Project All rights reserved.
+    </legal>
+  </footer>
+</document>

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE document SYSTEM "./dtd/document-v10.dtd">
+
+<document>
+  <header>
+    <title>Jesktop Documentation</title>
+    <subtitle>Skins</subtitle>
+    <authors>
+      <person id="WB" name="William Beebe" email="whbeebe@earthlink.net"/>
+      <person id="PH" name="Paul Hammant" email="Paul_Hammant@yahoo.com"/>
+    </authors>
+    <notice>
+      Jesktop documentation is under construction.  Everything you
+      can find outside this page is to be considered obsolete.
+    </notice>
+  </header>
+  <body>
+    <s1 title="Overview">
+      <p>
+        Jesktop supports different skins for the decoration of frames, fonts, colors and iconography.
+      </p>
+    </s1>
+    <s1 title="Detailed">
+      <p>
+        By Skin we mean the decoration that surrounds individual frames, the style and colors of widgets. We allow skin changing through applications that implement a Decorator interface.  These applications will be Jesktop only (not dual mode), but the toolkits they use might be quite independent of Jesktop. At this stage we have the following:
+      </p>
+      <ul>
+        <li>
+          Default Decorator.  Metal Look and Feel and small icons for application frames.
+        </li>
+        <li>
+          Test Decorator.  Choice of Metal or Motif look and feel, Choice of small of Big icons for application frames.  <link href="http://www.jesktop.net">See www.jesktop.net</link>
+        </li>
+        <li>
+          OYOAHA Decorator.  Multiple choices of look and feel.  The license for this is a bit unclear and Jesktop uses the compiled jar.  <link href="http://www.jesktop.net">See www.jesktop.net</link> and <link href="http://www.oyoaha.com">www.oyoaha.com</link>
+        </li>
+        <li>
+          Skin look and feel Decorator.  Again, multiple choices of look and feel.  The license for this is Apache-alike.  <link href="http://www.jesktop.net">See www.jesktop.net</link> and <link href="http://www.l2fprod.com">www.l2fprod.com</link>.  Mac, Windows, Beos, Aqua and XP-Luna look and feels are provided.
+        </li>
+      </ul>
+    </s1>
+  </body>
+  <footer>
+    <legal>
+      Copyright (c) @year@ The Jesktop Project All rights reserved.
+    </legal>
+  </footer>
+</document>

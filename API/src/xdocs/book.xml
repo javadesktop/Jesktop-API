@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<book software="Jesktop" title="Jesktop Documentation" copyright="@year@ The Apache Software Foundation">
+  <page id="index" label="Index" source="index.xml"/>
+  <page id="downloads" label="Downloads" source="download.xml"/>
+  <page id="installation" label="Installation" source="installation.xml"/>
+  <page id="cvs" label="The source repository" source="cvs.xml"/>
+  <page id="contrib" label="Contributors" source="contributors.xml"/>
+  <page id="contact" label="Mail-lists" source="contact.xml"/>
+  <page id="volunteers" label="Volunteers" source="volunteers.xml"/>
+<separator/>
+  <page id="features" label="Features" source="features.xml"/>
+  <page id="features-wm" label="Window Managers" source="features-wms.xml"/>
+  <page id="features-skins" label="Skins" source="features-skins.xml"/>
+  <page id="future" label="Where Jesktop is heading" source="future.xml"/>
+  <page id="builtinapps" label="Built-in applications" source="builtinapps.xml"/>
+  <page id="multilicense" label="Multi-license environment" source="multilicense.xml"/>
+  <page id="hosts" label="Host operating systems" source="hosts.xml"/>  
+  <page id="tools" label="Tools for building Jesktop" source="tools.xml"/>    
+<separator/>
+  <external id="index" label="Developer Docs" href="developer/index.html"/>
+<separator/>
+  <faqs id="faq" label="FAQ" source="faq.xml"/>
+  <changes id="changes" label="Changes" source="changes.xml"/>
+  <todo id="bugparade" label="Sun's Bug Parade" source="bugparade.xml"/>
+  <todo id="todo" label="Todo" source="todo.xml"/>
+</book>

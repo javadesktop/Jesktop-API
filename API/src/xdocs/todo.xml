@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE todo SYSTEM "dtd/todo-v10.dtd">
+
+<todo title="Jesktop Things To Do">
+ <devs>
+      <person id="WB" name="William Beebe" email="whbeebe@earthlink.net"/>
+      <person id="PH" name="Paul Hammant" email="Paul_Hammant@yahoo.com"/>
+ </devs>
+
+ <actions priority="high">
+  <action context="design">
+    New Command shell.  Ant based? 
+  </action>
+  <action context="design">
+    Persuade Avalon team to implement "interfaces for promotion" so that we can interoperate with other blocks.
+  </action>  
+  <action context="design">
+    Persuade Avalon team to enhance deserialization logic to allow classes from alternate classloaders.
+  </action>  
+  <action context="design">
+    Implement internationalization.  Hopefully with Avalon's XMLResourceBundle.
+  </action>  
+  <action context="design">
+    Make Kernel and window managers multi-user.  Possible to utilize a forthcoming Avalon block (which may allow integration with underlying OS as a non default implementation).
+  </action>  
+  <action context="code">  
+    Security policies for apps
+  </action>
+  <action context="code">  
+    Fully integrated browser.  Must use mime associated apps and allow remote installation of apps (in jars) from a web page. 
+  </action>
+  <action context="code">
+    Completion of mime handler &amp; management tool.
+  </action>
+  <action context="code">
+    Make kernel operations AWT thread safe and asynchronous where necessary.
+  </action>
+ </actions>
+
+ <actions priority="medium">
+  <action context="code">
+    Final Installer tool.
+  </action>  
+  <action context="code">
+      Alternate window managers
+  </action>  
+  <action context="code">
+      Windows desktop style links (shortcuts) to executables and files.
+  </action>  
+  <action context="code">
+      Bug: Not enough Javadoc comments
+  </action>       
+ </actions>
+ 
+
+</todo>

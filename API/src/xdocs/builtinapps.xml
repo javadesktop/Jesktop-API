@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE document SYSTEM "./dtd/document-v10.dtd">
+
+<document>
+  <header>
+    <title>Jesktop Documentation</title>
+    <subtitle>Built-in applications</subtitle>
+    <authors>
+      <person id="WB" name="William Beebe" email="whbeebe@earthlink.net"/>
+      <person id="PH" name="Paul Hammant" email="Paul_Hammant@yahoo.com"/>
+    </authors>
+    <notice>
+      Jesktop documentation is under construction.  Everything you
+      can find outside this page is to be considered obsolete.
+    </notice>
+  </header>
+  <body>
+    <s1 title="Overview">
+      <p>     
+	Built-in applications are usable at the first launch of Jesktop.
+      </p>     
+    </s1>
+    <s1 title="Application List">
+      <ul>
+        <li>
+          <strong>Chooser For Decorator.</strong>  This allows the user to choose a decorator for the frames opened within Jesktop.  It will not have much use unless a decorator is installed.  This is part of the Control Panel and is a Configlet.
+        </li>
+        <li>
+	  <strong>Simple Installer Tool.</strong>  This tool allows the user to locate and install applications distributed in jars.  You can use the File chooser to find a jar (that is Jesktop compatible) and install it.  You can also type or cut 'n' paste a URL into the textfield.  You can also drag a suitable jar from Directory Explorer and drop it into the Simple Installer's window.  The URL based mechanism will be integrated into some Jesktop compatible browser in the future (we hope).  With app installaion, you have a mandatory conform stage where you can see if an app is about to be replaced.  You must check the checkbox to complete the install.
+        </li>
+        <li>
+          <strong>Installed App Management Tool.</strong>  This allows the user to list the apps that are installed and the uninstall the apps they do not want (provided they are not built-in).
+        </li>
+        <li>
+	  <strong>Mimes and Extension Management.</strong>This tool is still in alpha stage, but when it is finished it will allow the user to manipulate associations between applications and mime types. With this version, you can just register new mime types, associate them with some extensions, and edit/remove these mime types. You cannot associate them with applications now.
+        </li>
+      </ul>    
+    </s1>
+    <s1 title="Notes">
+      <p>
+        All of the above tools are a bit too basic for obvious use.  They will be replaced in the future with more obvious and usable tools.
+      </p>
+    </s1>    
+   </body>
+  <footer>
+    <legal>
+      Copyright (c) @year@ The Jesktop Project All rights reserved.
+    </legal>
+  </footer>
+</document>

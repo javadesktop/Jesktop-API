@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE document SYSTEM "./dtd/document-v10.dtd">
+
+<document>
+  <header>
+    <title>Jesktop Documentation</title>
+    <subtitle>Contributors</subtitle>
+    <authors>
+      <person id="WB" name="William Beebe" email="whbeebe@earthlink.net"/>
+      <person id="PH" name="Paul Hammant" email="Paul_Hammant@yahoo.com"/>
+    </authors>
+    <notice>
+      Jesktop documentation is under construction.  Everything you
+      can find outside this page is to be considered obsolete.
+    </notice>
+  </header>
+  <body>
+    <s1 title="List of contributors">
+      <p>     
+	William Beebe <link href="mailto:whbeebe@earthlink.net">whbeebe@earthlink.net</link>. Creator of Portable Java Environment (PJE) which is the parent project of Jesktop.  Co-creator of Jesktop.  Design, documentation, and structure of Jesktop.
+      </p> 
+      <p>     
+	Paul Hammant <link href="mailto:Paul_Hammant@yahoo.com">Paul_Hammant@yahoo.com</link>.  Contributor to PJE.  Co-creator of Jesktop including prototype work. Design, documentation, and structure of Jesktop.
+      </p> 
+      <p>     
+	Laurent Cornelis <link href="mailto:lcor@brutele.be">lcor@brutele.be</link>.  Development of Mime registry and Mime/associations tool.
+      </p> 
+      <p>     
+	Rana Bhattacharyya <link href="mailto:rana_b@yahoo.com">rana_b@yahoo.com</link>.  Development of Jar Utility and donator of it to the Jesktop project.  Thanks :-)
+      </p>       
+      <p>     
+	Mark Stang <link href="mailto:markstang@earthlink.net">markstang@earthlink.net</link>.  Contributions to build scripts so far. 
+      </p>       
+    </s1>
+   </body>   
+  <footer>
+    <legal>
+      Copyright (c) @year@ The Jesktop Project All rights reserved.
+    </legal>
+  </footer>
+</document>

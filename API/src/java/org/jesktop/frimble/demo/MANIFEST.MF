@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Main-Class: org.jesktop.frimble.demo.FrimbleDemo
+Name: "FrimbleDemo"
+Created-By: "Paul Hammant <Paul_Hammant@yahoo.com>"
+Implementation-Vendor: "org.jesktop"
+Implementation-Version: "1.0.0"
+Implementation-Title: "Frimble Demo 1.0"
+

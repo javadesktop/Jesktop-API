@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE document SYSTEM "./dtd/document-v10.dtd">
+
+<document>
+  <header>
+    <title>Jesktop Developer Documentation</title>
+    <subtitle>What is a Frimble and how do I use it?</subtitle>
+    <authors>
+      <person id="WB" name="William Beebe" email="whbeebe@earthlink.net"/>
+      <person id="PH" name="Paul Hammant" email="Paul_Hammant@yahoo.com"/>
+    </authors>
+    <notice>
+      Jesktop documentation is under construction.  Everything you
+      can find outside this page is to be considered obsolete.
+    </notice>
+  </header>
+  <body>
+    <s1 title="Overview">
+      <p>
+        Frimble is short for Frame-able.  Yes, we know it is daft.
+      </p>
+      <p>
+      	It is a helper package that lets a developer of an application develop their application as a panel and use what ever type of frame-like containment that Jesktop may be configured to use.
+      </p>
+    </s1>
+    <s1 title="Why do we need Frimble">        
+      <p>    
+        Because there is no common interface that JFrame and JInternalFrame implement.  You cannot as a Swing developer abstract your frame-like containment.  Even if Sun chose to make them implement a future interface called Frameable, it could not work perfectly as the event structures are too incompatible to have a common interface.
+      </p>   
+      <p>          
+        Frimble itself is not a JComponent, it is a helper class so changes nothing about the implementation of JFrame or JInteralFrame. 
+      </p>   
+      <p>          
+        See one of the bugs logged at Sun's bug parade on the subject <link href="http://developer.java.sun.com/developer/bugParade/bugs/4195715.html">here</link>       
+      </p>                
+    </s1>     
+    <s1 title="What types of Frimble are available?">
+      <p>
+      	Today we have two types of frimble.  JFrameFrimble and JInternalFrameFrimble.  These encapsulate the the two swing classes of similar name.  These are 99% complete and both work with the example applications that we have delivered.
+      </p>
+    </s1>      
+    <s1 title="Where types of Frimble will be available?">      
+      <p>
+      	We see frimbles being created for general use that would give different views of contained components.  We could develop a Frimble that uses a tabbed pane concept of containment. The tabs would be the windows and they might have a common menu bar that switched as the tabbed were changed.  The thing would be novel but flawed as it is often nice to arrange your frames for special needs... i.e. reading from window A, whilst typing something else in Window B.
+      </p>    
+      <p>
+        A Network appliance manufacturer that wanted to deliver a new appliance might create their own frimble mechanism with some way of preserving pixel space on their resolution restricted device, whilst still allowing all of the benefits of downloaded and hot installable java GUI applications.  They might choose some drop-down type of launcher and running app changer.  The same for hand held appliance manufacturers.  Of course, the chips would have to beefier that today's (Dec 2000) Dragonball processors as The full JVM is required for Avalon and Jesktop and not the KVM as is popular at the moment.
+      </p>
+    </s1>    
+    <s1 title="How to port your GUI app to use Frimble">
+      <p>
+	Assuming you have already got to the stage where your app is an executable jar file.
+      </p>
+    <s2 title="Step by Step">      
+      <ul>
+        <li>
+          Stop using AWT, start using Swing (we guess you have already done this).
+        </li>
+        <li>
+	  The only real place you will have to make changes is at the outermost JComponent.  We'll call this the root JCompnent This JComponent should contain all visible aspects of your GUI.  Usually it is the class that is instantiated and also has the main(args) method.
+        </li>
+        <li>
+	  Take your JFrame instantiation out of the root JComponent's constructor, turning the root JCompnent into more of JComponent extended bean.  If you used to extend JFrame, don't, extend JPanel instead please.
+        </li>
+        <li>
+	  Implement the Interface "FrimbleAware" (jar supplied)
+        </li>
+        <li>
+	  In you main(args) method use JFrameFrimble.getJFrameFrimble(new JFrame()) to get an instance of Frimble which you then pass into your instance with setFrimble().  Jesktop itself will call setFrimble() for the configuration it's chosen Frimble compatible container.
+        </li>
+        <li>
+	  You can continue to have whatever other classes, helper classes, decorator classes, sub components etc.
+        </li>
+        <li>
+	  Try to avoid static variables as Jesktop will allow a second and subsequent launches of the same app.  If you genuinely have something that would be useful for all possible apps (of the same type) then static is fine.  E.g. the word "Exit" for a menu, assuming you have hard coded English, is fine, but a static JMenuItem for exit will not be a good idea.
+        </li>
+        <li>
+	  Jesktop, of course, does its own thing with Frimble and does not call your main(args) method.  You keep that method to allow you to still be standalone (if your want).
+        </li>
+        <li>
+ 	  In your META-INF/manifest, specify the dependant library from JesktopFrimble.jar to allow the standalone side of your app to run with double click.  See http://java.sun.com/docs/books/tutorial/ext/basics/download.html for how to do this.
+        </li>
+        <li>
+	  Add a file to your jar called JESKTOP-INF/applications.xml (see our examples) to indicate name and launchable class.
+        </li>
+        <li>
+	  Your app should function identically. with your referring to a member instance of Frimble instead of JFrame
+        </li>
+      </ul>  
+    </s2>          
+    <s2 title="By Example">     
+      <p>
+	See FrimbleDemo for how easy this is. Execute this to see it in standalone mode (JFrame):
+      </p>
+	<source>
+	  java -jar jesktop_frimble_demo.jar
+	</source>
+      <p>
+	or load the same jar into Jesktop via Jesktop's installer. See jesktop_frimble_demo.jar's MANIFEST.MF and applications.xml for the differences.      
+      </p>
+      <p>
+        To see the source for Frimble demo <link href="frimbledemo/FrimbleDemo.java.txt">click here</link>.<br/>
+        To see the manifest for Frimble demo <link href="frimbledemo/MANIFEST.MF.txt">click here</link>.<br/>
+        To see the applications.xml file for Frimble demo <link href="frimbledemo/applications.xml.txt">click here</link>.
+      </p>      
+      <p>
+        How they should be packaged in the jar file to be both standalone and Jesktop compatible:
+      </p>        
+          <source>
+            JESKTOP-INF/applications.xml<br/>
+            META-INF/MANIFEST.MF<br/>
+            org/jesktop/frimble/demo/FrimbleDemo.class
+          </source>
+
+    </s2>              
+    </s1>
+    <s1 title="How to package your app that uses a Frimble">    
+      <p>
+      	Whether you are going to intending your app to be Jesktop only or Standalone and Jesktop, you should not include the frimble package and it's classes in your apps main jar file.  For Jesktop dependant mode, your app will automatically have the frimble classes available to it's class loading environment.  For standalone mode, you should use a custom MANIFEST.MF file to indicate that a second jar is needed by the app.  Sun have a few pages that talk about this (<link href="http://developer.java.sun.com/developer/Books/JAR/basics/manifest.html">here</link>), or your could just look at FrimbleDemo (TODO-link) and the section of the build.xml file concerning it for inspiration.
+      </p>    
+    </s1>   
+  </body>
+  <footer>
+    <legal>
+      Copyright (c) @year@ The Jesktop Project All rights reserved.
+    </legal>
+  </footer>
+</document>

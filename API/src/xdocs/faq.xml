@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE faqs SYSTEM "./dtd/faq-v10.dtd">
+
+<faqs title="Frequently Asked Questions">
+
+<faq>
+  <question>What is Jesktop?</question>
+  <answer>
+        <p>Jesktop is a desktop system written in Java for Java GUI apps. It runs on top of Avalon</p>
+  </answer>
+</faq>
+<faq>
+  <question>What will it run on</question>
+  <answer>
+        <p>Jesktop will run on Linux and Windows computers.  The code, as most Java, is machine independant, but has not been tested on Mac or other OSs</p>
+  </answer>
+</faq>
+<faq>
+  <question>Where is it going?</question>
+  <answer>
+        <p>It will become a layer giving the experience of a full desktop operation system.  When the CPU/memory of small devices catch up with the level required to run J2SE, it will run there too.</p>
+  </answer>
+</faq>
+<faq>
+  <question>What is the point?</question>
+  <answer>
+        <p>Apart from the usual desktop OS features. Permissions based applications (in sandbox and in various stages out of it).  Single Jar, multiple platforms (Java's promise).  Hot installable and reinstallable applications.</p>
+  </answer>
+</faq>
+<faq>
+  <question>What's the license?</question>
+  <answer>
+        <p>The implementation is Apache license.  The interfaces are BSD.  Commercial, GPL and open source software can be created/modified to be compatible with Jesktop without breaking their or Jesktops license.</p>
+  </answer>
+</faq>
+<faq>
+  <question>What could companies do with Jesktop?</question>
+  <answer>
+        <p>They could take and modify the implementation (it would be nice if the published changes back).  They could write new Window managers under their copyright (PDAs have small pixel areas.  They could market hardware products with Jesktop inside them and avail of GUI applications written and not written to the Jesktop interfaces...  Free apps for cool devices.</p>
+  </answer>
+</faq>
+<faq>
+ <question>What is Avalon?</question>
+ <answer>
+        <p>Avalon is a server framework from Apache.  Read <link href="avalon.html">this</link></p>
+  </answer>
+</faq>
+
+</faqs>

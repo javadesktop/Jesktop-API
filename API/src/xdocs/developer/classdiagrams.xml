@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE document SYSTEM "./dtd/document-v10.dtd">
+
+<document>
+  <header>
+    <title>Jesktop Documentation</title>
+    <subtitle>Class Diagrams</subtitle>
+    <authors>
+      <person id="WB" name="William Beebe" email="whbeebe@earthlink.net"/>
+      <person id="PH" name="Paul Hammant" email="Paul_Hammant@yahoo.com"/>
+    </authors>
+    <notice>
+      Jesktop documentation is under construction.  Everything you
+      can find outside this page is to be considered obsolete.
+    </notice>
+  </header>
+  <body>
+    <s1 title="Introduction">
+      <p>     
+	These class diagrams show various parts of the Jesktop system.  A complete diagram would be too messy to show, so sections are shown here.
+      </p> 
+    </s1>
+    <s1 title="Class Diagrams">
+    <s2 title="Kernel">    
+      <figure src="images/classdiag_kernel.gif" alt="Kernel Class Diagram"/>
+      <p>           
+	This diagram shows the Kernel as an abstract class <em>DesktopKernel</em> and it's implementation <em>DesktopKernelImpl</em>.  Also shown are <em>AppLauncher</em>, <em>AppInstaller</em> and <em>ImageRepository</em> with their implementations.  These are parts of the Kernel really but have been moved out of the Kernel for reasons of modularity.
+      </p> 	  
+    </s2>    
+    <s2 title="Frimble plus FrimbleDemo">    
+      <figure src="images/classdiag_frimble.gif" alt="Frimble Class Diagram"/>
+      <p>           
+	This diagram shows the <em>Frimble</em> abstract class and it's two final extensions <em>JFrameFrimble</em> and <em>JInternalFrameFrimble</em>.  Also shown are <em>FrimbleAware</em> (the interface that some applications will implement) and <em>FrimbleEvent</em>, <em>FrimbleListener</em> &amp; <em>FrimbleAdapter</em> (the event handling helper classes).  Lastly <em>FrimbleDemo</em> shows an app that implements <em>FrimbleAware</em>.
+      </p> 	  
+    </s2>
+    <s2 title="Example Window Managers">    
+      <figure src="images/classdiag_windowmanagers.gif" alt="Window Managers Class Diagram"/>
+      <p>           
+	Very much a work in progress, this diagram shows the test implementations of the <em>WindowManager</em> interface.  All are working to various degrees, but only <em>WindozeWindowManager</em> is being polished.  At some point the useful common code will be rolled in to a new class called <em>AbstractWindowManager</em> and the other window managers (that still have merit) moved to separate packages.
+      </p> 	  
+    </s2>    
+    </s1>
+   </body>   
+  <footer>
+    <legal>
+      Copyright (c) @year@ The Jesktop Project All rights reserved.
+    </legal>
+  </footer>
+</document>

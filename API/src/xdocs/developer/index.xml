@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE document SYSTEM "./dtd/document-v10.dtd">
+
+<document>
+  <header>
+    <title>Jesktop Developer Documentation</title>
+    <subtitle>Introduction</subtitle>
+    <authors>
+      <person id="WB" name="William Beebe" email="whbeebe@earthlink.net"/>
+      <person id="PH" name="Paul Hammant" email="Paul_Hammant@yahoo.com"/>
+    </authors>
+    <notice>
+      Jesktop documentation is under construction.  Everything you
+      can find outside this page is to be considered obsolete.
+    </notice>
+  </header>
+  <body>
+    <s1 title="Overview">
+      <p>
+      	Applications for use with Jesktop must be packaged in Jar files an contain a manifest of sorts detailing the applications that the jar contains.  The applications themselves must be Swing based and have a few programming constraints.
+      </p>
+      <p>
+        Applications can be written specifically for Jesktop or can be dual mode.  That is where they can run from the command line (e.g. java -jar -myapp.jar) and run inside Jesktop.  The app must be developed carefully so that it can run as both standalone and Jesktop dependant.
+      </p>
+    </s1>
+    <s1 title="Levels of compatability">
+      <p>
+        <strong>Level 1 - JPanel.</strong> If your main GUI class is a plain JPanel, that needs no menu,title or window events, just have an empty constructor and keep all your JFrame logic in the main() method (which won't be called). Include the JESKTOP-INF/applications.xml file to tell Jesktop what to launch and it should be installable.  This is a really simple target to aim at.
+      </p>
+      <p>
+        <strong>Level 2 - Frimble.</strong> As above, but your apps needs a Frame like container for Title, menu and Window Events.  Implement the Frimble logic - see FrimbleDemo as well as having and empty constructor, and the applications.xml descriptor.  Your app can be dual mode - it can run from the command line and inside Jesktop.
+      </p>
+      <p>
+        <strong>Level 3 - Jesktop aware.</strong> Advice as for (2) above.  Also implement DesktopKernelAware.  This makes allows the app to interact with the Kernel for many services.  Bewarned that this interface is evolving quite a lot at the moment.  The build in Windows style explorer is an example of this.  As is SimpleInstaller.
+      </p>
+    </s1>    
+    <s1 title="Further reading">    
+      <p>See the documentation on Frimble.  An example of that is the FrimbleDemo class.</p>
+      <p>See our list of contraints to coding.</p>
+    </s1>        
+  </body>
+  <footer>
+    <legal>
+      Copyright (c) @year@ The Jesktop Project All rights reserved.
+    </legal>
+  </footer>
+</document>

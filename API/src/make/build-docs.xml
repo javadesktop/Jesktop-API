@@ -1,0 +1,305 @@
+<?xml version="1.0"?>
+
+<!--
+     =======================================================================
+     Jesktop Docs Build File
+     =======================================================================
+-->
+<project name="jesktop_docs_builder" default="docs" basedir="..\..">
+
+  <property name="javadocs.packages" value="org.jesktop.*"/>
+
+  <property name="xdocs.dir" value="src/xdocs"/>
+  <property name="dtd.dir" value="${xdocs.dir}/dtd"/>
+  <property name="images.dir" value="${xdocs.dir}/resources"/>
+  <property name="skins.dir" value="src/skins"/>
+  <property name="stylesheets.dir" value="${skins.dir}"/>
+
+  <property name="site.dir" value="../xml-site/sources/avalon"/>
+  <property name="site.docs" value="../xml-site/targets/avalon"/>
+
+  <property name="jesktop.skin" value="${skins.dir}/jesktop/"/>
+
+  <property name="build.docs.developer" value="${build.docs}/developer"/>
+  <property name="build.xdocs" value="${build.dir}/xdocs"/>
+  <property name="build.xdocs.developer" value="${build.xdocs}/developer"/>
+
+  <path id="doc.class.path">
+    <pathelement path="${java.class.path}" />
+    <pathelement path="avalon/lib/stylebook-1.0-b2.jar" />
+    <pathelement path="avalon/lib/xalan_1_2_D02.jar" />
+    <pathelement path="avalon/lib/xerces.jar" />
+  </path>
+
+  <!--
+       ===================================================================
+                     Prepares the documentation directory
+       ===================================================================
+  -->
+  <target name="prepare-docs">
+<filter token="year" value="${year}"/>
+    <mkdir dir="${build.xdocs}"/>
+    <mkdir dir="${build.docs}"/>
+
+    
+    <filter token="jesktop-api.jar.size" value="${jesktop-api.jar.size}"/>
+    <filter token="jesktop-frimble.jar.size" value="${jesktop-frimble.jar.size}"/>
+    <filter token="jesktop-frimble-demoapp1.jar.size" value="${jesktop-frimble-demoapp1.jar.size}"/>
+    <filter token="jesktop-frimble-demoapp2.jar.size" value="${jesktop-frimble-demoapp2.jar.size}"/>
+    <filter token="jesktop-frimble-demoapp3.jar.size" value="${jesktop-frimble-demoapp3.jar.size}"/>  
+
+
+    <copy todir="${build.xdocs}" filtering="on">
+      <fileset dir="${xdocs.dir}">
+        <exclude name="images/*"/>
+      </fileset>
+    </copy>
+
+    <copy todir="${build.xdocs}" filtering="off">
+      <fileset dir="${xdocs.dir}">
+        <include name="images/*"/>
+      </fileset>
+    </copy>
+
+  </target>
+
+  <!--
+       ===================================================================
+                          Create developer documentation
+       ===================================================================
+  -->
+  <target name="xdocs-dev">
+    <mkdir dir="${build.docs}"/>
+    <mkdir dir="${build.docs.developer}"/>
+
+    <copy todir="${build.xdocs}/developer" filtering="on">
+      <fileset dir="${xdocs.dir}/developer">
+        <exclude name="images/*"/>
+      </fileset>
+    </copy>
+
+    <copy todir="${build.xdocs.developer}" filtering="off">
+      <fileset dir="${xdocs.dir}/developer">
+        <include name="images/*"/>
+      </fileset>
+    </copy>
+
+    <stylebook targetdirectory="${build.docs.developer}"
+               book="${build.xdocs.developer}/book.xml"
+               skindirectory="src/skins/jesktop">
+      <classpath refid="doc.class.path" />
+    </stylebook>
+
+    <copy todir="${build.docs.developer}" filtering="off">
+      <fileset dir="${xdocs.dir}/developer">
+        <include name="*.jnlp"/>
+      </fileset>
+    </copy>
+<!--
+    <copy todir="${build.docs.developer}" filtering="off">
+      <fileset dir="dist/export">
+        <include name="jesktop_frimble_demo3.jar"/>
+        <include name="jesktop_frimble.jar"/>
+      </fileset>
+    </copy>
+-->
+    <mkdir dir="${build.docs}/developer/frimbledemo"/>
+
+    <copy todir="${build.docs}/developer/frimbledemo/">
+      <fileset dir="src/java/org/jesktop/frimble/demo/">
+         <include name="**"/>
+      </fileset>
+    </copy>
+
+    <move  file="${build.docs}/developer/frimbledemo/applications.xml" tofile="${build.docs}/frimbledemo/applications.xml.txt" />
+    <move  file="${build.docs}/developer/frimbledemo/FrimbleDemo.java" tofile="${build.docs}/frimbledemo/FrimbleDemo.java.txt" />
+    <move  file="${build.docs}/developer/frimbledemo/MANIFEST.MF" tofile="${build.docs}/frimbledemo/MANIFEST.MF.txt" />
+
+
+  </target>
+
+  <!--
+       ===================================================================
+                            Create html documentation
+       ===================================================================
+  -->
+  <target name="xdocs" depends="prepare-docs">
+    <mkdir dir="${build.docs}"/>  
+    
+    
+    <replace file="${build.xdocs}/index.xml" token="@@version@@" value="${version}"/>
+    <replace file="${build.xdocs}/index.xml" token="@@version-date@@" value="${version-date}"/>
+
+    <stylebook targetdirectory="${build.docs}"
+               book="${build.xdocs}/book.xml"
+               skindirectory="src/skins/jesktop">
+      <classpath refid="doc.class.path" />
+    </stylebook>
+
+  </target>
+
+  <!--
+       ===================================================================
+       Create the API documentation
+       ===================================================================
+  -->
+  <target name="javadocs">
+
+    <deltree dir="${build.javadocs}"/>
+    <mkdir dir="${build.javadocs}"/>
+
+    <javadoc packagenames="${javadocs.packages}"
+             sourcepath="src/java"
+             destdir="${build.javadocs}"
+             author="true"
+             version="true"
+             use="true"
+             windowtitle="${Name} API"
+             doctitle="${Name}"
+             bottom="Copyright &#169; ${year} Jesktop Project. All Rights Reserved."
+    />
+
+    <mkdir dir="${javadocs.dir}"/>
+
+    <copy todir="${javadocs.dir}">
+     <fileset dir="${build.javadocs}" />
+    </copy>
+
+    <copy file="${stylesheets.dir}/javadoc.css" todir="${build.javadocs}/"/>
+
+  </target>
+
+  <target name="docs" depends="xdocs, xdocs-dev, javadocs"/>
+
+  <target name="docs-dist" depends="docs">
+    <mkdir dir="dist/docs"/>
+
+
+    <!-- API Documentation on its own -->
+
+    <zip zipfile="dist/docs/Jesktop_APIDocumentation.zip"
+         basedir="${build.javadocs}" compress="true">
+      <exclude name="**/*.jar"/>
+      <exclude name="**/*.zip"/>
+    </zip>
+
+    <tar tarfile="dist/docs/Jesktop_APIDocumentation.tar"
+         basedir="${build.javadocs}">
+      <exclude name="**/*.jar"/>
+      <exclude name="**/*.zip"/>
+    </tar>
+    <gzip zipfile="dist/docs/Jesktop_APIDocumentation.tar.gz"
+          src="dist/docs/Jesktop_APIDocumentation.tar"
+    />
+    <delete file="dist/docs/Jesktop_APIDocumentation.tar" />
+
+
+    <!-- Full Documentation -->
+
+    <zip zipfile="dist/docs/Jesktop_FullDocumentation.zip">
+      <fileset dir="${build.javadocs}">
+        <exclude name="**/*.jar"/>
+        <exclude name="**/*.zip"/>
+      </fileset>         
+      <fileset dir="${build.docs}">
+        <exclude name="**/*.jar"/>
+        <exclude name="**/*.zip"/>
+      </fileset>         
+
+    </zip>
+
+<!--
+    <tar tarfile="dist/docs/Jesktop_FullDocumentation.tar">
+      <fileset dir="${build.javadocs}">
+        <exclude name="**/*.jar"/>
+        <exclude name="**/*.zip"/>
+      </fileset>         
+      <fileset dir="${build.docs}">
+        <exclude name="**/*.jar"/>
+        <exclude name="**/*.zip"/>
+      </fileset>     
+    </tar>
+
+    <gzip zipfile="dist/docs/Jesktop_FullDocumentation.tar.gz"
+          src="dist/docs/Jesktop_FullDocumentation.tar"
+    />
+    <delete file="dist/docs/Jesktop_FullDocumentation.tar" />
+
+-->    
+
+    <!-- Xdoc generated Documentation without API docs -->
+
+    <zip zipfile="dist/docs/Jesktop_WebDocumentation.zip"
+         basedir="${build.docs}" >
+      <exclude name="**/*.jar"/>
+      <exclude name="**/*.zip"/>
+      <exclude name="api/**"/>
+    </zip>
+
+
+    <tar tarfile="dist/docs/Jesktop_WebDocumentation.tar"
+         basedir="${build.docs}">
+      <exclude name="**/*.jar"/>
+      <exclude name="**/*.zip"/>
+      <exclude name="api/**"/>
+    </tar>
+    <gzip zipfile="dist/docs/Jesktop_WebDocumentation.tar.gz"
+          src="dist/docs/Jesktop_WebDocumentation.tar"
+    />
+    <delete file="dist/docs/Jesktop_WebDocumentation.tar" />
+
+    <antcall target="dl-page">
+      <param name="dir" value="dist/docs"/>
+      <param name="title" value="Jesktop API downloadable documentation"/>
+    </antcall>
+
+  </target>
+
+    <target name="dl-page">
+
+        <script language="javascript"><![CDATA[           
+
+            var dir = jesktop_docs_builder.getProperty("dir")
+            var fos = java.io.FileOutputStream("index.tmp");
+            var ps = java.io.PrintStream(fos);          
+            ps.println("<html><head>");
+            ps.println("<title>" + jesktop_docs_builder.getProperty("title") + "</title>");
+            ps.println("</head><body>");
+            ps.println("<h1>" + jesktop_docs_builder.getProperty("title") + "</h1>");
+            ps.println("<table>");
+            var files = java.io.File(dir);            
+	    var distFiles    =   files.listFiles();
+
+	    for (var count = 0; count < distFiles.length;count++)
+	    {
+	        var distFile = distFiles[count];
+		ps.print("<tr>");
+		ps.print("<td>");
+		ps.print("<a href=\u0022" + distFiles[count].getName() + "\u0022>" + distFiles[count].getName() + "</a>");
+		ps.print("</td>");
+		ps.print("<td>");
+		ps.print("" + java.lang.Long(distFile.length() /1024).intValue() + "Kb");
+		ps.print("</td>");
+		ps.println("</tr>");
+	    }
+
+            ps.println("</table></body></html>");
+            ps.close();
+            fos.close();
+        ]]></script>
+
+        <copy file="index.tmp" tofile="${dir}/index.html"/>
+
+    </target> 
+
+
+
+
+</project>
+
+
+
+
+
+
+

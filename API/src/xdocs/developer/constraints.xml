@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE document SYSTEM "./dtd/document-v10.dtd">
+
+<document>
+  <header>
+    <title>Jesktop Developer Documentation</title>
+    <subtitle>Prgramming Constraints</subtitle>
+    <authors>
+      <person id="PH" name="Paul Hammant" email="Paul_Hammant@yahoo.com"/>
+    </authors>
+    <notice>
+      Jesktop documentation is under construction.  Everything you
+      can find outside this page is to be considered obsolete.
+    </notice>
+  </header>
+  <body>
+    <s1 title="Programming constraints">
+      <ul>
+        <li>
+          <strong>Packaged as Jar</strong>.The application must be entirely contained within it's jar.  It may, after launch, create directories in the file system for storage of it's own work files and settings, but these should not be an installation requirement.  It may also be dependant on other jars - see the applications.xml documentation for how this should be indicated.
+        </li>
+        <li>
+          <strong>Empty Constructor.</strong>  The class that Jesktop should instantiate must have an empty constructor.  Jesktop does not call the main() method, though you may leave that in so that you can still run from the command line. 
+        </li>
+        <li>
+          <strong>Careful use of JFrame or JDialog.</strong>  The instantiatable class must extend JComponent (directly or indirectly), Jesktop provides a mechanism for JFrame-like containment and factories for JDialogs. This is called Frimble. If you want your app to be standalone as well as launchable inside Jesktop, then place your JFrame logic inside the main() method - see our example (FrimbleDemo).
+        </li>
+        <li>
+          <strong>Careful use of static.</strong>  Consider that the application may be lanched more than once.  When this happens, the same class loader will be used.  This means that there will be two instances of the main panel (or whatever) indie the same VM.  When the applications was coded to launch from the command line (java myclass etc.) that would never happen. It does now.  So if you use static, make sure it is for things that are for all instances.  This includes constants or "set once" things like language specific strings.  It should not include anything that may change or could be different per instance.  I (Paul H) have found that most of the times I have porting an app to Jesktop, I could safely remove the static keyword from variables and all would be fine.
+        </li>        
+      </ul>          
+    </s1>
+  </body>
+  <footer>
+    <legal>
+      Copyright (c) @year@ The Jesktop Project All rights reserved.
+    </legal>
+  </footer>
+</document>

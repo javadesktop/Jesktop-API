@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<book software="Jesktop" title="Jesktop Developer Documentation" copyright="@year@ The Apache Software Foundation">
+  <page id="index" label="Index" source="index.xml"/>
+  <page id="constraints" label="Programming Constraints" source="constraints.xml"/>
+  <page id="applications" label="Applications" source="applications.xml"/>
+  <page id="frimble" label="Frimble" source="frimble.xml"/>
+  <page id="javawebstart" label="Java Web Start" source="javawebstart.xml"/>
+  <page id="decorators" label="Decorators" source="decorators.xml"/>
+  <page id="applications2" label="Advanced Apps" source="applications2.xml"/>
+  <page id="mainfests" label="Manifests" source="manifests.xml"/>
+  <page id="classdiags" label="Class Diagrams" source="classdiagrams.xml"/>
+</book>

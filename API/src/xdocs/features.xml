@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE document SYSTEM "./dtd/document-v10.dtd">
+
+<document>
+  <header>
+    <title>Jesktop Documentation</title>
+    <subtitle>Features</subtitle>
+    <authors>
+      <person id="WB" name="William Beebe" email="whbeebe@earthlink.net"/>
+      <person id="PH" name="Paul Hammant" email="Paul_Hammant@yahoo.com"/>
+    </authors>
+    <notice>
+      Jesktop documentation is under construction.  Everything you
+      can find outside this page is to be considered obsolete.
+    </notice>
+  </header>
+  <body>
+    <s1 title="Feature List">
+      <ul>
+        <li>
+          Multiple GUI applications running inside the same virtual machine.
+        </li>
+        <li>
+           Multiple server applications running inside the same virtual machine.
+        </li>
+        <li>
+          Drag and drop between applications (to finish)
+        </li>
+        <li>
+          Mime type associations for applications (to finish)
+        </li>
+        <li>
+          Many built-in, bundled and ported applications.
+        </li>
+        <li>
+          Plugable Window Managers. See <link href="features-wm.html">this link</link>.
+        </li>
+        <li>
+          Hot installable applications. Hot deinstallable and reinstallable too.
+        </li>
+        <li>
+          Externally skinable applications.  Apps don't need their own skin logic. See <link href="features-skins.html">this link</link>.
+        </li>
+      </ul>
+    </s1>
+  </body>
+  <footer>
+    <legal>
+      Copyright (c) @year@ The Jesktop Project All rights reserved.
+    </legal>
+  </footer>
+</document>

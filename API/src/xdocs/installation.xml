@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE document SYSTEM "./dtd/document-v10.dtd">
+
+<document>
+  <header>
+    <title>Jesktop Documentation</title>
+    <subtitle>Installation</subtitle>
+    <authors>
+      <person id="WB" name="William Beebe" email="whbeebe@earthlink.net"/>
+      <person id="PH" name="Paul Hammant" email="Paul_Hammant@yahoo.com"/>
+    </authors>
+    <notice>
+      Jesktop documentation is under construction.  Everything you
+      can find outside this page is to be considered obsolete.
+    </notice>
+  </header>
+  <body>
+    <s1 title="Dependancies">
+      <p>Jesktop needs Avalon.  Avalon needs JDK1.3 (to be built) or JRE 1.3 (to run on).  To build Jesktop, you'll need to have set two environmental varables:</p>
+      <ol>
+        <li>
+    	  <strong>JAVA_HOME</strong>  e.g. c:\jdk1.3
+        </li>
+        <li>
+          <strong>PATH</strong>  e.g. %PATH%;c:\jdk1.3\bin
+        </li>
+      </ol>
+      <p>Jesktop, like Avalon, uses Apache's Ant system for building the classes and jars from source.  They both include their own version of Ant in their distribution. You don't need to download and install Ant separately.  In fact, if you have Ant installed, you may get some problems building Jesktop as the two versions might be incompatible.</p>
+      <p>For those that haven't heard the news, Ant is the defacto standard for building Java based projects.  Read about it at Apache's <link href="http://jakarta.apache.org/ant">Ant website</link></p>
+    </s1>
+    <!--
+    <s1 title="Installation using a downloaded Avalon4.0b1">  
+      <p>
+      	Jesktop is dependant upon the installation of Avalon.  Avalon is available from <link href="http://jakarta.apache.org/site/binindex.html">here</link> and all you need is the binary distribution (specifically version 4.0b1).  When you have got that and unzipped it, you'll then need to get the SAR file for Jesktop and install that by dropping it into &lt;avalon-root&gt;/apps.  Then you'll need to run Avalon using run.bat or run.sh in in &lt;avalon-root&gt;/bin.  This will install the blocks then load them.    Jesktop, after that, should open it's main JFrame.  It is does not, look at the reasons in the console from which you launched Avalon, or Avalon's log file in &lt;avalon-root&gt;/log.  Cross reference what you can see there against the trouble-shooting section.
+      </p>
+    </s1>
+    -->
+    <s1 title="Installation using the Full-Source distribution of Jesktop (which includes Avalon)">
+    <p>
+        There are multiple downloads for you to do, that range in size from 15Kb (JCalculator app) to 4.4Mb (Jesktop's source with Avalon). See <link href="downloads.html">Downloads</link> page.
+    </p>
+    <ol>
+      <li>
+        Download and unzip Jesktop and the separate applications zips.
+      </li>
+      <li>
+        Go into jesktop/ or the root directory of whichever application you have downloaded and run "build".
+      </li>
+      <li>
+        Also from the command line run "build docs" for Jesktop to make these documents and the API docs.
+      </li>
+      <li>
+        Go into jesktop/phoenix/bin and run "run"
+      </li>
+      <li>
+        Using Simple installer locate jars in their "dist" directories and install them. See <link href="builtinapps.html">Built-in apps</link> for more.
+      </li>
+      <li>
+        Launch things from the Start button and play with them.
+      </li>
+    </ol>
+    </s1>
+
+    <s1 title="Step by Step Installation from Perforce source depot">
+    <ol>
+      <li>
+        As part of your perforce setup, choose a place on your hard drive for the depot.  There may, in time, be more than just Jesktop in there, so we have a dir like c:\oss_perforce_co_uk\
+      </li>
+      <li>
+        Do a "sync to head revision" on the Jesktop node.  This may be slow for the first run, but will be very fast for second and subsequent.
+      </li>
+      <li>
+        Follow instructions above from "build" and downwards.
+      </li>
+      <li>
+        Every time you want to see the new version, just do another sync and run the build batch file.  Sometimes "build clean" is a good idea if we have been deleting files/classes.  Perforce handles that very well but Ant does not.
+      </li>
+    </ol>
+    </s1>
+  </body>
+  <footer>
+    <legal>
+      Copyright (c) @year@ The Jesktop Project All rights reserved.
+    </legal>
+  </footer>
+</document>

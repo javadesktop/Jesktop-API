@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE document SYSTEM "./dtd/document-v10.dtd">
+
+<document>
+  <header>
+    <title>Jesktop Documentation</title>
+    <subtitle>Bugs on the BugParage we MUST have fixed</subtitle>
+    <authors>
+      <person id="CD" name="Chris Dailey" email="mouse@intranet.org"/>
+      <person id="PH" name="Paul Hammant" email="Paul_Hammant@yahoo.com"/>
+    </authors>
+    <notice>
+      Jesktop documentation is under construction.  Everything you
+      can find outside this page is to be considered obsolete.
+    </notice>
+  </header>
+  <body>
+    <s1 title="Introduction">
+      <p>
+        There are some bugs registered in Sun's bug parade that we must have fixed.  If you have registered yourself at the bug parade and don't have all of your three votes used please vote for one or more of these.  There are also some enhancements that would be nice too.
+      </p>
+    </s1>
+    <s1 title="Bugs">
+    <s2 title="AWT Toolkit / ClassCastException">
+      <p>
+        See <link href="http://developer.java.sun.com/developer/bugParade/bugs/4345948.html">bug 4345948</link> on Sun's bugparade.
+      </p>
+      <p>
+        In order to be able to emulate AWT components using the Swing library, we need to be able to overcoe this issue.  We can render AWT components in Jesktop and it's hosted applications, but they look terrible at the moment. Sun will fix this if we get enough votes for it.  <strong>This is priority number one</strong>.
+      </p>
+    </s2>
+    <s2 title="URLClassLoader fails when a URL points to a JAR inside another JAR">
+      <p>
+        See <link href="http://developer.java.sun.com/developer/bugParade/bugs/4388202.html">bug 4388202</link> on Sun's bugparade.
+      </p>
+      <p>
+        Jesktop can download dependant jars from the web during an applications install.  It should be able to download jars from withing jars (or zips) on the web during install too, but for the above bug.
+      </p>
+    </s2>
+    </s1>
+    <s1 title="Enhancements">
+    <s2 title="Java Demos">
+      <p>
+        Could the demos bundled with the JDK please have empty constructors and be plain JPanels (with JFrame in the main method).  It's a lot easier to adapt them to Jesktop then.  The the graphically pleasing one that eludes us will be possible - Java2D.  Note: there is no current votable item for this in the Bug Parade. <strong>No voting target on the bug parade setup for this yet</strong>
+      </p>
+    </s2>
+    <s2 title="Repaint whilst AWT Thread blocked">
+      <p>
+        Button press causes application#1 to invoke a Jesktop API to cause a lengthy load of application#2. Application#1 wants to immediately invoke method calls into the application#2.  No repaint activity will happen until the last invoked action has completed. It would be nice to call Toolkit.getToolKit().performPendingRepaints() at various points. <strong>No voting target on the bug parade setup for this yet</strong>
+      </p>
+    </s2>
+    </s1>
+  </body>
+  <footer>
+    <legal>
+      Copyright (c) @year@ The Jesktop Project All rights reserved.
+    </legal>
+  </footer>
+</document>

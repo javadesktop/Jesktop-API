@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE changes SYSTEM "dtd/changes-v10.dtd">
+
+<changes title="Jesktop History of Changes">
+  <devs>
+      <person id="WB" name="William Beebe" email="whbeebe@earthlink.net"/>
+      <person id="PH" name="Paul Hammant" email="Paul_Hammant@yahoo.com"/>
+  </devs>
+
+ <release version="1.0 (alpha 21)" date="Oct 13, 2001">
+  <action dev="PH" type="update">
+    Bug fixes for Control panel.
+  </action>
+ </release>
+
+ <release version="1.0 (alpha 20)" date="Oct 6, 2001">
+  <action dev="PH" type="update">
+    Automatic app installation during boot.
+  </action>
+ </release>
+
+
+ <release version="1.0 (alpha 19)" date="Sept 6, 2001">
+  <action dev="PH" type="update">
+    Implementation moves to Apache, and becomes part of the Cornerstone project.  Interfaces (API) stay at oss.perforce.co.uk.
+  </action>
+</release>
+
+ <release version="1.0 (alpha 16)" date="Aug 18, 2001">
+  <action dev="PH" type="update">
+    Beanshell updated to 1.2b1, Avalon updated to version of the 18th Aug version.  Upgraded Decorators (OYOAHA and Skin).  Control Panel and Configlets introduced.
+  </action>
+</release>
+
+ <release version="1.0 (alpha 13)" date="May 23, 2001">
+  <action dev="PH" type="update">
+    Beanshell updated to 1.1alpha8, Avalon updated to version of the 22nd May version (post 4.0beta1).  New applications JCDSee, JFileManager.  Separation of Jesktop and it's dependant applications.  Revamped JDK Demos.  New Decorator (using OYOAHA look and feel).  New version of Ant.  Launch of jesktop.net website.
+  </action>
+</release>
+
+ <release version="1.0 (alpha 12)" date="Mar 29, 2001">
+  <action dev="PH" type="update">
+    Beanshell updated to alpha5, Avalon updated to tonight's version.
+  </action>
+</release>
+
+ <release version="1.0 (alpha 11)" date="Mar 21, 2001">
+  <action dev="PH" type="update">
+    FrimbleDemo3 started - Java Web Start Compatible
+  </action>
+</release>
+
+ <release version="1.0 (alpha 10)" date="Mar 21, 2001">
+  <action dev="PH" type="update">
+    XBrowser Complete and indexed from website.  Lots of thanks to Armond for his help.
+  </action>
+</release>
+
+
+ <release version="1.0 (alpha 8)" date="Mar 11, 2001">
+  <action dev="PH" type="update">
+    Frimble changed again.  JFrimble (at Armonds suggestion) being extendible makes app coding easier.  William has made changes to clock to facilitate geater efforts.  Concept of single instance app introduced. Developer docs forked off into their own book.
+  </action>
+</release>
+
+ <release version="1.0 (alpha 7)" date="Feb 21, 2001">
+  <action dev="PH" type="update">
+    Frimble changed.  JFrimbleDialog class instead of makeJDialog() method.  Should only affect uses of JDialog.  Suggestion of Armond Avanes - lead developer of XBrowser.
+  </action>
+</release>
+
+ <release version="1.0 (alpha 6)" date="Feb 18, 2001">
+  <action dev="PH" type="update">
+    Beanshell upgraded to version 1.1alpha4 from 1.0beta.  New .bsh scripts to interact with Jesktop.
+  </action>
+</release>
+
+ <release version="1.0 (alpha 5)" date="Feb 11, 2001">
+  <action dev="PH" type="update">
+    Jipe and JPad added as new ported applications.
+  </action>
+</release>
+
+
+ <release version="1.0 (alpha development)" date="Dec 2000">
+  <action dev="WB" type="update">
+    First Jesktop implementation.
+  </action>
+</release>
+
+
+
+</changes>
