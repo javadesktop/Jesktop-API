@@ -6,8 +6,10 @@
  * style license a copy of which has been included with this distribution in *
  * the jesktop-bsd-license.html file.                                        *
  *****************************************************************************/
-package org.jesktop.api;
+package org.jesktop;
 
+import org.jesktop.JesktopLaunchException;
+import org.jesktop.LaunchedTarget;
 
 
 /**

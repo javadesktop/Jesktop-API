@@ -6,27 +6,43 @@
  * style license a copy of which has been included with this distribution in *
  * the jesktop-bsd-license.html file.                                        *
  *****************************************************************************/
-package org.jesktop.api;
+package org.jesktop;
 
+
+
+import java.net.URL;
+
+import java.io.InputStream;
 
 
 /**
- * Class JesktopLaunchException
+ * Interface AppInstaller
  *
  *
  * @author Paul Hammant <a href="mailto:Paul_Hammant@yahoo.com">Paul_Hammant@yahoo.com</a>
- * @version $Revision: 1.1 $
+ * @version * $Revision: 1.1 $
  */
-public class JesktopLaunchException extends Exception {
+public interface AppInstaller {
 
     /**
-     * Constructor JesktopLaunchException
+     * Method installApps
      *
      *
-     * @param reason
+     * @param url
+     *
+     * @throws org.jesktop.JesktopPackagingException
      *
      */
-    public JesktopLaunchException(String reason) {
-        super(reason);
-    }
+    void installApps(URL url) throws JesktopPackagingException;
+
+    /**
+     * Method installApps
+     *
+     *
+     * @param urls
+     *
+     * @throws JesktopPackagingException
+     *
+     */
+    void installApps(URL[] urls) throws JesktopPackagingException;
 }

@@ -6,15 +6,27 @@
  * style license a copy of which has been included with this distribution in *
  * the jesktop-bsd-license.html file.                                        *
  *****************************************************************************/
-package org.jesktop.api;
-
+package org.jesktop;
 
 
 
 /**
+ * Class JesktopLaunchException
+ *
+ *
  * @author Paul Hammant <a href="mailto:Paul_Hammant@yahoo.com">Paul_Hammant@yahoo.com</a>
- * @deprecated
- * @version 1.0
+ * @version $Revision: 1.1 $
  */
-public interface DesktopKernelAware {
+public class JesktopLaunchException extends Exception {
+
+    /**
+     * Constructor JesktopLaunchException
+     *
+     *
+     * @param reason
+     *
+     */
+    public JesktopLaunchException(String reason) {
+        super(reason);
+    }
 }

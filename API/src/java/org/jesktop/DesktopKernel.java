@@ -6,7 +6,7 @@
  * style license a copy of which has been included with this distribution in *
  * the jesktop-bsd-license.html file.                                        *
  *****************************************************************************/
-package org.jesktop.api;
+package org.jesktop;
 
 import org.jesktop.launchable.LaunchableTarget;
 import org.jesktop.launchable.DecoratorLaunchableTarget;
@@ -26,7 +26,7 @@ import java.awt.Point;
  */
 public interface DesktopKernel {
 	
-    String ROLE = "org.jesktop.api.DesktopKernel";
+    String ROLE = "org.jesktop.DesktopKernel";
 
     String SHUTDOWN_SHUTDOWN = "org.jesktop.SHUTDOWN";
     String SHUTDOWN_REBOOT = "org.jesktop.REBOOT";

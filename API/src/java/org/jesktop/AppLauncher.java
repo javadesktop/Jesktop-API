@@ -6,7 +6,7 @@
  * style license a copy of which has been included with this distribution in *
  * the jesktop-bsd-license.html file.                                        *
  *****************************************************************************/
-package org.jesktop.api;
+package org.jesktop;
 
 
 
@@ -62,7 +62,7 @@ public interface AppLauncher {
      * @return
      *
      * @throws JesktopLaunchException
-     * @throws JesktopPackagingException
+     * @throws org.jesktop.JesktopPackagingException
      *
      */
     Object launchAppWithoutInstallation(URL jarURL)
