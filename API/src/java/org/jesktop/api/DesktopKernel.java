@@ -148,42 +148,6 @@ public interface DesktopKernel {
     void uninstall(LaunchableTarget launchableTarget);
 
     /**
-     * Method getAppInstaller
-     *
-     *
-     * @return
-     *
-     */
-    AppInstaller getAppInstaller();
-
-    /**
-     * Method getAppLauncher
-     *
-     *
-     * @return
-     *
-     */
-    AppLauncher getAppLauncher();
-
-    /**
-     * Method getMimeManager
-     *
-     *
-     * @return
-     *
-     */
-    MimeManager getMimeManager();
-
-    /**
-     * Method getImageRepository
-     *
-     *
-     * @return
-     *
-     */
-    ImageRepository getImageRepository();
-
-    /**
      * Method notifyLaunchableTargetListeners
      *
      *

@@ -17,12 +17,4 @@ import java.beans.PropertyChangeListener;
  */
 public interface Configlet  extends PropertyChangeListener {
 
-    /**
-     * Method setConfigManager
-     *
-     *
-     * @param cm
-     *
-     */
-    void setConfigManager(ConfigManager cm);
 }

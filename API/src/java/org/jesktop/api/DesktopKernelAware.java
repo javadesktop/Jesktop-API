@@ -13,16 +13,8 @@ package org.jesktop.api;
 
 /**
  * @author Paul Hammant <a href="mailto:Paul_Hammant@yahoo.com">Paul_Hammant@yahoo.com</a>
+ * @deprecated
  * @version 1.0
  */
 public interface DesktopKernelAware {
-
-    /**
-     * Method setDesktopKernel provides a callback for the app to the Kernel
-     *
-     *
-     * @param desktopKernel the DesktopKernel instance.
-     *
-     */
-    void setDesktopKernel(DesktopKernel desktopKernel);
 }

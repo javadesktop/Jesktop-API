@@ -19,9 +19,9 @@ import org.jesktop.launchable.LaunchableTarget;
  *
  *
  * @author <a href="mailto:Paul_Hammant@yahoo.com">Paul_Hammant@yahoo.com</a> Dec 2000.
- * @version $Revision: 1.1 $
+ * @version $Revision: 1.2 $
  */
-public interface Decorator extends DesktopKernelAware {
+public interface Decorator {
 
     /**
      * Method end finishes the the decoration in this style.  Some decoration concepts
@@ -31,12 +31,12 @@ public interface Decorator extends DesktopKernelAware {
     void end();
 
     /**
-     * Method initDecoratation is called when a new frimble has been openon of the desktop.
+     * Method decorate is called when a new frimble has been openon of the desktop.
      *
      *
      * @param frimble the frimble to decorate.
      * @param launchableTarget the launchable tartget that it is from.
      *
      */
-    void initDecoratation(Frimble frimble, LaunchableTarget launchableTarget);
+    void decorate(Frimble frimble, LaunchableTarget launchableTarget);
 }
