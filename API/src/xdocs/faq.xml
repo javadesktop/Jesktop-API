@@ -7,7 +7,7 @@
 <faq>
   <question>What is Jesktop?</question>
   <answer>
-        <p>Jesktop is a desktop system written in Java for Java GUI apps. It runs on top of NanoContainer</p>
+        <p>Jesktop is a desktop system written in Java for Java GUI apps. It runs on top of <link href="http://www.nanocontainer.org">NanoContainer</link></p>
   </answer>
 </faq>
 <faq>

@@ -16,19 +16,10 @@
   </header>
   <body>
     <s1 title="Contacting us.">
-      <p>
-        We have two mail list.  At the moment they are hosted through Yahoo groups (formerly known as egroups.com).  If they prove to be slow, we'll move elsewhere.
-      </p>
-      <s2 title="Announcements">
-      <p>For people only wanting infrequent news about Jesktop releases etc.</p>      
-      <p>
-        Send and email to <link href="mailto:Jesktop_Announce-subscribe@yahoogroups.com">Jesktop_Announce-subscribe@yahoogroups.com</link> to subscribe.
-      </p>
-      </s2>      
       <s2 title="Developers">
       <p>For people interested in the developer chatter of the people developing Jesktop</p>
       <p>
-        Send and email to <link href="mailto:Jesktop_Developers-subscribe@yahoogroups.com">Jesktop_Developers-subscribe@yahoogroups.com</link> to subscribe.  After you've replied to the consequential email from the list server engine, you may email to <link href="mailto:Jesktop_Developers@yahoogroups.com">Jesktop_Developers@yahoogroups.com</link>.
+        Go to <link href="http://lists.sourceforge.net/lists/listinfo/jesktop-developer">http://lists.sourceforge.net/lists/listinfo/jesktop-developer</link> to subscribe.  
       </p>            
       </s2>
     </s1>

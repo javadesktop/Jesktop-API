@@ -52,7 +52,7 @@
  	  Better control of window positions and size at launch.        
         </li>
         <li>
-	  More Shells.  - Ant may well be improved soon so that all of its commands can be invoked from a command line type console inside Jesktop. - we will also have commands that are NanoContainer and Jesktop specific e.g. "Shutdown".      
+	  More Shells.  - Ant may well be improved soon so that all of its commands can be invoked from a command line type console inside Jesktop. - we will also have commands that are <link href="http://www.nanocontainer.org">NanoContainer</link> and Jesktop specific e.g. "Shutdown".      
         </li>
         <li>	  
           Security polices for Jars. - things like clock that require no special resources, can run inside a sandbox. - other applications can ask for permission to read/write to specific directories and other permissions.

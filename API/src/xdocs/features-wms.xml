@@ -23,7 +23,7 @@
     </s1>
     <s1 title="Detailed">
       <p>
-        Window managers are implemented using PicoContainer/NanoContainer's component architecture.  This means that there are plugable in a configuration file. At some point in the future we will provide a hot plugable facility, at which point the user will be able to chose a new Window Manager inside Jesktop and switch to it.
+        Window managers are implemented using <link href="http://www.picocontainer.org">PicoContainer</link>/<link href="http://www.nanocontainer.org">NanoContainer's</link> component architecture.  This means that there are plugable in a configuration file. At some point in the future we will provide a hot plugable facility, at which point the user will be able to chose a new Window Manager inside Jesktop and switch to it.
       </p>
       <p>
         At this stage what we mean by window manager is the style and placement of the controls for:

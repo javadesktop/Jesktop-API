@@ -20,7 +20,7 @@
 	We're looking for volunteers to help with the development of Jesktop.  If you have good Java and Swing skills, and can think of something to write for Jesktop, then let us know - Jesktop_Developers@yahoogroups.com.  Alternatively, just write something and surprise us!
       </p>
       <p>
-        We really need a few choices of command line environment.  It you have skills in those areas then please start writing one.  Services will be added to Jesktop and NanoContainer to allow command line manipulation of things inside the machine, including those that teh command line env has not been compiled against.  What we think would be cool, would be Apache's ANT commands running inside a shell gui on Jesktop.  If you are familar with Ant, Bash, Beanshell then effort here would be grewatly appreciated.
+        We really need a few choices of command line environment.  It you have skills in those areas then please start writing one.  Services will be added to Jesktop and <link href="http://www.nanocontainer.org">NanoContainer</link> to allow command line manipulation of things inside the machine, including those that teh command line env has not been compiled against.  What we think would be cool, would be Apache's ANT commands running inside a shell gui on Jesktop.  If you are familar with Ant, Bash, Beanshell then effort here would be grewatly appreciated.
       </p>
     </s1>
   </body>

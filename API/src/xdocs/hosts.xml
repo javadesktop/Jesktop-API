@@ -17,7 +17,7 @@
   <body>
     <s1 title="Introduction">
       <p>
-        Any OS that can provide a J2SE environment could be a host to Jesktop and NanoContainer.  That said, there are not many.  Manufacturers of lightweight and RTOSs have a fixation for Personal Java or J2ME on the KVM :-(
+        Any OS that can provide a J2SE environment could be a host to Jesktop and <link href="http://www.nanocontainer.org">NanoContainer</link>.  That said, there are not many.  Manufacturers of lightweight and RTOSs have a fixation for Personal Java or J2ME on the KVM :-(
       </p>
     </s1>
     <s1 title="Full blown">

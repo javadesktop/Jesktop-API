@@ -11,7 +11,7 @@
  <release version="2.0" date="Feb 17, 2004">
   <action dev="PH" type="update">
     Not dead, just sleeping. This is what happens when you join ThoughtWorks.  
-    Oh that and move this puppy to PicoContainer / NanoContainer from Avalon.
+    Oh that and move this puppy to <link href="http://www.picocontainer.org">PicoContainer</link> / <link href="http://www.nanocontainer.org">NanoContainer</link> from Avalon.
   </action>
  </release>
 
