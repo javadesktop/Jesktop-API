@@ -23,7 +23,7 @@
     </s1>
     <s1 title="Jesktop Reference Implementation">
       <p>
-        This is hosted by sourceforge at <link href="http://www.jesktop.com">http://www.jesktop.com</link>.
+        This is hosted by sourceforge at <link href="http://www.jesktop.com">www.jesktop.com</link>.
       </p>
     </s1>    
     <s1 title="Applications for Jesktop">
@@ -38,11 +38,7 @@
       </p>
       <p>
         For a raw view of the directory (so you can see file sizes) <link href="full_source_distributions/index.html">see this</link>.
-      </p>
-      <p>	
-        After downloading and unzipping, all you have to do with this is run the build.bat of build.sh file.  After that, go into phoenoix/bin and launch Jesktop with run.bat or run.sh.  After that launch "Simple Installer" and install applications from <link href="http://www.jesktopapps.sourceforge.net/apps">http://www.jesktopapps.sourceforge.net/apps</link>.  These are installable remotely, or you can download them (recommended) first.
-      </p>
-      
+      </p>      
     </s1>
     <s1 title="Jars and Interfaces for use with other projects">
       <p><strong>If you are a developer of a GUI app and want to include jars or classes to make it Jesktop compatible.</strong></p>

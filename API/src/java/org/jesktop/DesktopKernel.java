@@ -118,7 +118,7 @@ public interface DesktopKernel {
     */
 
     //public void installApps(String jarFileName); // used to help debugging
-    void runAsychronously(Runnable runnable) throws Exception;
+    void runAsychronously(Runnable runnable);
 
     /**
      * Method getNormalLaunchableTargets
