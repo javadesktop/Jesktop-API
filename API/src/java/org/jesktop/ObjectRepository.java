@@ -1,5 +1,7 @@
 package org.jesktop;
 
+import java.io.IOException;
+
 public interface ObjectRepository {
     void put(String key, Object data);
     boolean containsKey(String key);
