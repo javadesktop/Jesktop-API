@@ -4,7 +4,7 @@
 
 <changes title="Jesktop History of Changes">
   <devs>
-      <person id="WB" name="William Beebe" email="whbeebe@earthlink.net"/>
+      <person id="WB" name="William Beebe" email="bill_beebe@yahoo.com"/>
       <person id="PH" name="Paul Hammant" email="Paul_Hammant@yahoo.com"/>
   </devs>
 
@@ -41,7 +41,7 @@
 
  <release version="1.0 (alpha 13)" date="May 23, 2001">
   <action dev="PH" type="update">
-    Beanshell updated to 1.1alpha8, Avalon updated to version of the 22nd May version (post 4.0beta1).  New applications JCDSee, JFileManager.  Separation of Jesktop and it's dependant applications.  Revamped JDK Demos.  New Decorator (using OYOAHA look and feel).  New version of Ant.  Launch of jesktop.net website.
+    Beanshell updated to 1.1alpha8, Avalon updated to version of the 22nd May version (post 4.0beta1).  New applications JCDSee, JFileManager.  Separation of Jesktop and it's dependant applications.  Revamped JDK Demos.  New Decorator (using OYOAHA look and feel).  New version of Ant.  Launch of jesktopapps.sourceforge.net website.
   </action>
 </release>
 

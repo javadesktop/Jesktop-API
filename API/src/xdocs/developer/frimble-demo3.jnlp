@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <!-- JNLP File for Frimble Demo #3 --> 
 <jnlp 
-  spec="1.0+" codebase="http://www.jesktop.org/" href="developer/frimble-demo3.jnlp"> 
+  spec="1.0+" codebase="http://jesktop.sourceforge.net/" href="developer/frimble-demo3.jnlp"> 
   <information> 
     <title>Frimble Demo 3</title> 
     <vendor>Jesktop Project</vendor> 

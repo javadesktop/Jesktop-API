@@ -7,7 +7,7 @@
     <title>Jesktop Documentation</title>
     <subtitle>Downloads</subtitle>
     <authors>
-      <person id="WB" name="William Beebe" email="whbeebe@earthlink.net"/>
+      <person id="WB" name="William Beebe" email="bill_beebe@yahoo.com"/>
       <person id="PH" name="Paul Hammant" email="Paul_Hammant@yahoo.com"/>
     </authors>
     <notice>
@@ -23,15 +23,12 @@
     </s1>
     <s1 title="Jesktop Implementation">
       <p>
-        This is hosted by Apache as part of Avalon's Cornerstone project.<link href="http://jakarta.apache.org/builds/jakarta-avalon/nightly/">here</link>.  Download one of the latest Cornerstones and build the app.
-      </p>
-      <p>
-        Alternatively, you can download a recent snapshot of a ready to run Jesktop in zip form <link href="jesktop.zip">here</link>.  After unzipping it, go into directory jakarta-avalon-phoenix/dist/bin and execute the appropriate "run" batch/shell file.  It is about 2 Megabytes in size to download.
+        This is hosted by at sourceforge.<link href="http://jesktopimpl.sourceforge.net">here</link>.  
       </p>
     </s1>    
     <s1 title="Applications for Jesktop">
       <p>
-        Applications for Jesktop are listed on the <link href="http://www.jesktop.net">www.jesktop.net</link> website.  There are a couple of applications that come with Jesktop from the Apache site - "Explorer" and some miscellaenous apps.
+        Applications for Jesktop are listed on the <link href="http://jesktopapps.sourceforge.net">www.jesktopapps.sourceforge.net</link> website.  There are a couple of applications that come with Jesktop from the Apache site - "Explorer" and some miscellaenous apps.
       </p>
     </s1>
     <s1 title="Jesktop API Source">
@@ -43,7 +40,7 @@
         For a raw view of the directory (so you can see file sizes) <link href="full_source_distributions/index.html">see this</link>.
       </p>
       <p>	
-        After downloading and unzipping, all you have to do with this is run the build.bat of build.sh file.  After that, go into phoenoix/bin and launch Jesktop with run.bat or run.sh.  After that launch "Simple Installer" and install applications from <link href="http://www.jesktop.net/apps">http://www.jesktop.net/apps</link>.  These are installable remotely, or you can download them (recommended) first.
+        After downloading and unzipping, all you have to do with this is run the build.bat of build.sh file.  After that, go into phoenoix/bin and launch Jesktop with run.bat or run.sh.  After that launch "Simple Installer" and install applications from <link href="http://www.jesktopapps.sourceforge.net/apps">http://www.jesktopapps.sourceforge.net/apps</link>.  These are installable remotely, or you can download them (recommended) first.
       </p>
       
     </s1>
