@@ -1,0 +1,458 @@
+<?xml version="1.0"?>
+
+<!--
+==============================================================================
+
+ Jesktop API build file
+
+==============================================================================
+-->
+
+<project name="jesktop_api" default="main" basedir=".">
+
+  <!--
+    Give user a chance to override without editing this file
+    (and without typing -D each time he compiles it)
+  -->
+  <property file=".ant.properties"/>
+  <property file="${user.home}/.ant.properties"/>
+
+  <property name="name" value="jesktop-api"/>
+  <property name="Name" value="Jesktop API"/>
+  <property name="version" value="1.0"/>
+  <property name="year" value="2001"/>
+
+  <!--
+    these are here only for those who use jikes compiler. For other
+    developers this part makes no difference.
+  -->
+  <property name="build.compiler.emacs" value="on"/>
+  <property name="build.compiler.warnings" value="true"/>
+  <property name="build.compiler.pedantic" value="true"/>
+  <property name="build.compiler.depend" value="true"/>
+  <property name="build.compiler.fulldepend" value="true"/>
+
+  <property name="debug" value="on"/>
+  <property name="optimize" value="off"/>
+  <property name="deprecation" value="on"/>
+
+  <!--
+       ===================================================================
+       Set the properties for intermediate directory
+       ===================================================================
+  -->
+  <property name="build.dir" value="build"/>
+  <property name="build.lib" value="${build.dir}/lib"/>
+  <property name="build.src" value="${build.dir}/src"/>
+  <property name="build.classes" value="${build.dir}/classes"/>
+  <property name="build.javadocs" value="${build.dir}/javadocs"/>
+  <property name="build.docs" value="${build.dir}/docs"/>
+  <property name="build.xdocs" value="${build.dir}/xdocs"/>
+
+  <!--
+       ===================================================================
+       Set the properties for source directories
+       ===================================================================
+  -->
+  <property name="src.dir" value="src"/>
+  <property name="java.dir" value="${src.dir}/java"/>
+  <property name="manifest.dir" value="${src.dir}/manifest"/>
+  <property name="conf.dir" value="${src.dir}/conf"/>
+  <property name="tools.dir" value="tools"/>
+  <property name="docs.dir" value="docs"/>
+  <property name="javadocs.dir" value="${docs.dir}/api"/>
+  <property name="xdocs.dir" value="${src.dir}/xdocs"/>
+  <property name="avalon.skin" value="${tools.dir}/lib/jakarta-style.jar"/>
+  <property name="xerces.jar" value="${tools.dir}/lib/xerces.jar"/>  
+
+  <property name="dist.name" value="${Name}-${version}"/>
+  <property name="dist.base" value="distributions"/>
+
+  <path id="project.class.path">
+    <pathelement path="${java.class.path}" />
+    <pathelement path="lib/xml.jar" />    
+  </path>
+
+  <!--
+       ===================================================================
+                                  Main target
+       ===================================================================
+  -->
+  <target name="main" depends="jars" />
+
+  <!--
+       ===================================================================
+                                  Help on usage
+       ===================================================================
+  -->
+  <target name="usage">
+    <echo message=""/>
+    <echo message="${Name} Build file"/>
+    <echo message="-------------------------------------------------------------"/>
+    <echo message=""/>
+    <echo message=" available targets are:"/>
+    <echo message=""/>
+    <echo message="   jars       -> generates the ${Name} jar files"/>
+    <echo message="   javadocs   -> generates the API documentation (java 1.2+ only)"/>
+    <echo message="   install    -> installs Cornerstone into Phoenix"/>
+<!--
+    <echo message="   docs       -> generates the ${Name} Documentation"/>
+    <echo message="   dist-lite  -> generates the ${Name} distribution without the javadocs (default)"/>
+    <echo message="   dist       -> generates the ${Name} distribution"/>
+ -->
+    <echo message="   clean      -> cleans up the created directories"/>
+    <echo message="   real-clean -> cleans up all genereated files and directories"/>
+    <echo message=""/>
+    <echo message="-------------------------------------------------------------"/>
+    <echo message=""/>
+  </target>
+
+  <target name="help" depends="usage"/>
+
+  <!--
+       ===================================================================
+       Set up dist properties
+       ===================================================================
+  -->
+  <target name="setup-properties" >
+
+    <property name="dist.dir" value="dist"/>
+    <property name="dist.lib" value="${dist.dir}/lib"/>
+    <property name="dist.docs" value="${dist.dir}/docs"/>
+    <property name="dist.javadocs" value="${dist.dir}/docs/api"/>
+
+    <property name="src.dist.dir" value="dist-src"/>
+    <property name="src.dist.src" value="${src.dist.dir}/src"/>
+    <property name="src.dist.docs" value="${src.dist.dir}/docs"/>
+    <property name="src.dist.javadocs" value="${src.dist.dir}/docs/api"/>
+    <property name="src.dist.lib" value="${src.dist.dir}/lib"/>
+    <property name="src.dist.tools" value="${src.dist.dir}/tools"/>
+  </target>
+
+  <!--
+       ===================================================================
+                         Prepares the build directory
+       ===================================================================
+  -->
+  <target name="compile">
+ 
+    <mkdir dir="${build.dir}"/>
+    <available property="jsse.present" classname="javax.net.ssl.SSLServerSocket" />
+
+    <mkdir dir="${build.classes}"/>
+
+    <javac srcdir="${java.dir}"
+           destdir="${build.classes}"
+           debug="${debug}"
+           optimize="${optimize}"
+           deprecation="${deprecation}">
+      <classpath refid="project.class.path" />
+      <exclude name="**/gui/*.java"/> 
+    </javac>
+
+
+    <copy todir="${build.classes}">
+      <fileset dir="${java.dir}">
+        <include name="**/*.xinfo"/>
+        <include name="**/*.properties" />
+      </fileset>
+    </copy>
+
+  </target>
+
+  <!--
+       ===================================================================
+                           Creates all the .jar file
+       ===================================================================
+  -->
+  <target name="jars" depends="compile">
+
+    <mkdir dir="${build.lib}"/>
+    <mkdir dir="dist"/>
+    <mkdir dir="dist/export"/>
+
+    <jar jarfile="dist/export/jesktop-api.jar">
+      <fileset dir="${build.classes}">
+        <exclude name="**/frimble/**"/>
+      </fileset>    
+      <fileset dir="src/java/org/jesktop/frimble">
+        <include name="jesktop-bsd-license.html"/>
+      </fileset>        
+    </jar>
+    
+    <jar jarfile="dist/export/jesktop-frimble.jar">
+      <fileset dir="${build.classes}">
+        <include name="org/jesktop/frimble/**"/>
+        <exclude name="org/jesktop/frimble/demo*"/>
+      </fileset>         
+      <fileset dir="src/java/org/jesktop/frimble">
+        <include name="jesktop-bsd-license.html"/>
+      </fileset>        
+    </jar>    
+    
+    <jar jarfile="dist/export/jesktop-frimble-demoapp1.jar"
+      manifest="src/java/org/jesktop/frimble/demo/MANIFEST.MF">
+      <fileset dir="${build.classes}">
+        <include name="org/jesktop/frimble/*.class"/>
+        <include name="org/jesktop/frimble/demo/*.class"/>
+      </fileset>  
+      <zipfileset dir="src/java/org/jesktop/frimble/demo" prefix="JESKTOP-INF">
+        <include name="*.xml"/>
+      </zipfileset>       
+      <zipfileset dir="src/java/org/jesktop/frimble/demo" prefix="src">
+        <include name="*.java"/>
+      </zipfileset>       
+      <fileset dir="src/java/org/jesktop/frimble/demo">
+        <include name="*.txt"/>
+      </fileset>        
+      <fileset dir="src/java/org/jesktop/frimble">
+        <include name="jesktop-bsd-license.html"/>
+      </fileset>      
+    </jar>  
+      
+    <jar jarfile="dist/export/jesktop-frimble-demoapp2.jar"
+      manifest="src/java/org/jesktop/frimble/demo2/MANIFEST.MF">
+      <fileset dir="${build.classes}">
+        <include name="org/jesktop/frimble/*.class"/>
+        <include name="org/jesktop/frimble/demo2/*.class"/>
+      </fileset>  
+      <zipfileset dir="src/java/org/jesktop/frimble/demo2" prefix="JESKTOP-INF">
+        <include name="*.xml"/>
+      </zipfileset>      
+      <zipfileset dir="src/java/org/jesktop/frimble/demo2" prefix="src">
+        <include name="*.java"/>
+      </zipfileset>       
+      <fileset dir="src/java/org/jesktop/frimble/demo2">
+        <include name="*.txt"/>
+      </fileset>        
+      <fileset dir="src/java/org/jesktop/frimble">
+        <include name="jesktop-bsd-license.html"/>
+      </fileset>  
+    </jar>        
+      
+      
+    <jar jarfile="dist/export/jesktop-frimble-demoapp3.jar"
+      manifest="src/java/org/jesktop/frimble/demo3/MANIFEST.MF">
+      <fileset dir="${build.classes}">
+        <include name="org/jesktop/frimble/*.class"/>
+        <include name="org/jesktop/frimble/demo3/*.class"/>
+      </fileset>  
+      <zipfileset dir="src/java/org/jesktop/frimble/demo3" prefix="JESKTOP-INF">
+        <include name="*.xml"/>
+      </zipfileset>      
+      <zipfileset dir="src/java/org/jesktop/frimble/demo3" prefix="src">
+        <include name="*.java"/>
+      </zipfileset>             
+      <fileset dir="src/java/org/jesktop/frimble/demo3">
+        <include name="*.txt"/>
+      </fileset>        
+      <fileset dir="src/java/org/jesktop/frimble">
+        <include name="jesktop-bsd-license.html"/>
+      </fileset>              
+    </jar>    
+
+    <antcall target="dl-page">
+      <param name="dir" value="dist/export"/>
+      <param name="title" value="Jesktop API full source downloadables"/>
+    </antcall>
+
+  </target>
+
+  <!--
+       ===================================================================
+       Create the Local site documentation
+       ===================================================================
+  -->
+  <target name="local-xdocs" depends="xdocs">
+
+    <delete>
+      <fileset dir="${docs.dir}">
+        <exclude name="api/**"/>
+      </fileset>
+    </delete>
+    <mkdir dir="${docs.dir}"/>
+
+    <copy todir="${docs.dir}">
+      <fileset dir="${build.docs}" />
+    </copy>
+
+  </target>
+
+  <target name="source">
+
+    <mkdir dir="dist/full_source_distributions"/>
+
+    <zip zipfile="dist/full_source_distributions/Jesktop_FullSourceDistribution.zip"
+         basedir="." >
+
+      <include name="lib/**"/>
+      <include name="src/**"/>
+      <include name="build.*"/>
+      <include name="in*"/>
+      <include name="LICENSE"/>
+      <include name="README"/>
+      <exclude name="build/**"/>
+      <exclude name="phoenix/**"/>
+      <exclude name="imported/**"/>
+    </zip>
+
+    <tar tarfile="dist/full_source_distributions/Jesktop_FullSourceDistribution.tar"
+         basedir=".">
+
+      <include name="lib/**"/>
+      <include name="src/**"/>
+      <include name="build.*"/>
+      <include name="in*"/>
+      <include name="LICENSE"/>
+      <include name="README"/>
+      <exclude name="build/**"/>
+      <exclude name="phoenix/**"/>
+      <exclude name="imported/**"/>
+
+    </tar>
+    <gzip zipfile="dist/full_source_distributions/Jesktop_FullSourceDistribution.tar.gz"
+          src="dist/full_source_distributions/Jesktop_FullSourceDistribution.tar"
+    />
+    <delete file="dist/full_source_distributions/Jesktop_FullSourceDistribution.tar" />
+
+    <antcall target="dl-page">
+      <param name="dir" value="dist/full_source_distributions"/>
+      <param name="title" value="Jesktop API full source downloadables"/>
+    </antcall>
+
+
+  </target>
+  
+  <!--
+       ===================================================================
+                 Completely build all dists
+       ===================================================================
+  -->
+  <target name="dist" depends="real-clean,jars, source, dist_sizes,xdocs">
+    <mkdir dir="dist"/>
+  </target>
+  
+    <target name="dist_sizes">
+        <script language="javascript"><![CDATA[           
+            var files = java.io.File("dist/export");          
+            var distFiles    =   files.listFiles();
+            for (var count = 0; count < distFiles.length;count++)
+            {
+                var distFile = distFiles[count];
+                jesktop_api.setProperty(distFile.getName() + ".size", "" + java.lang.Long(distFile.length() /1024).intValue() + "Kb");
+
+            }
+        ]]></script>
+    </target>  
+  
+  <!--
+       ===================================================================
+       Copy distributables
+       ===================================================================
+  -->
+  <target name="docs-copy">
+
+    <copy todir="dist">
+          <fileset dir="build/docs">
+            <include name="**"/>
+          </fileset>
+    </copy>
+
+  </target>
+
+  <target name="website" depends="dist,docs-dist,docs-copy"/>
+
+
+  <!--
+       ===================================================================
+       Create documentation
+       ===================================================================
+  -->
+  <target name="docs" depends="setup-properties">
+    <ant antfile="src/make/build-docs.xml" target="docs" />
+  </target>
+  <target name="docs-dist" depends="setup-properties">
+      <ant antfile="src/make/build-docs.xml" target="docs-dist" />
+  </target>
+  <target name="xdocs" depends="setup-properties">
+      <ant antfile="src/make/build-docs.xml" target="xdocs" />
+  </target>
+  <target name="xdocs-dev" depends="setup-properties">
+      <ant antfile="src/make/build-docs.xml" target="xdocs-dev" />
+  </target>
+  <target name="xdocs-all" depends="setup-properties">
+      <ant antfile="src/make/build-docs.xml" target="xdocs" />
+      <ant antfile="src/make/build-docs.xml" target="xdocs-dev" />
+  </target>
+  <!--
+       ===================================================================
+       Create api documentation
+       ===================================================================
+  -->
+  <target name="javadocs" depends="setup-properties">
+    <ant antfile="src/make/build-docs.xml" target="javadocs" />
+  </target>
+
+
+  <!--
+       ===================================================================
+                 Cleans up build and distribution directories
+       ===================================================================
+  -->
+  <target name="clean">
+    <delete dir="${build.dir}" />
+    <delete dir="dist" />
+    <delete>
+      <fileset dir="." includes="**/*~" defaultexcludes="no"/>
+    </delete>
+  </target>
+
+  <!--
+       ===================================================================
+                      Cleans absolutely everything up
+       ===================================================================
+  -->
+  <target name="real-clean" depends="clean">
+    <delete dir="${docs.dir}" />
+    <delete dir="${dist.base}" />
+  </target>  
+
+    <target name="dl-page">
+
+        <script language="javascript"><![CDATA[           
+
+            var dir = jesktop_api.getProperty("dir")
+            var fos = java.io.FileOutputStream("index.tmp");
+            var ps = java.io.PrintStream(fos);          
+            ps.println("<html><head>");
+            ps.println("<title>" + jesktop_api.getProperty("title") + "</title>");
+            ps.println("</head><body>");
+            ps.println("<h1>" + jesktop_api.getProperty("title") + "</h1>");
+            ps.println("<table>");
+            var files = java.io.File(dir);            
+	    var distFiles    =   files.listFiles();
+
+	    for (var count = 0; count < distFiles.length;count++)
+	    {
+	        var distFile = distFiles[count];
+		ps.print("<tr>");
+		ps.print("<td>");
+		ps.print("<a href=\u0022" + distFiles[count].getName() + "\u0022>" + distFiles[count].getName() + "</a>");
+		ps.print("</td>");
+		ps.print("<td>");
+		ps.print("" + java.lang.Long(distFile.length() /1024).intValue() + "Kb");
+		ps.print("</td>");
+		ps.println("</tr>");
+	    }
+
+            ps.println("</table></body></html>");
+            ps.close();
+            fos.close();
+        ]]></script>
+
+        <copy file="index.tmp" tofile="${dir}/index.html"/>
+
+    </target> 
+
+
+</project>
