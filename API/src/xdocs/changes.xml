@@ -8,6 +8,14 @@
       <person id="PH" name="Paul Hammant" email="Paul_Hammant@yahoo.com"/>
   </devs>
 
+ <release version="2.0" date="Feb 17, 2004">
+  <action dev="PH" type="update">
+    Not dead, just sleeping. This is what happens when you join ThoughtWorks.  
+    Oh that and move this puppy to PicoContainer / NanoContainer from Avalon.
+  </action>
+ </release>
+
+
  <release version="1.0 (alpha 21)" date="Jan 14, 2002">
   <action dev="PH" type="update">
     Move to sourceforge

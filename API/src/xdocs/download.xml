@@ -44,20 +44,6 @@
       </p>
       
     </s1>
-    <!--
-    <s1 title="Jesktop API without source">
-      <p><strong>If you want to install a pre-built Jesktop in to Avalon (that you have already installed)</strong></p>
-      <p>
-        <strong>Note.</strong> These installables are hot installable over the web, use you regular browser for now (a Jesktop compatible one - one day) to copy the URL to SimpleInstaller.  This will take the application(s) from the web and install them into Jesktop. <strong>However</strong> You might want to use your regular browser's Save-as feature to create local copies of the installable applications and install them from there as you never know when you might want to re-install an application!!
-      </p>
-      <p>
-        For a raw view of the directory (so you can see file sizes) <link href="jesktop-block/index.html">see this</link> for the jesktop sar file.
-      </p>
-      <p>
-	Jesktop's sar file for Avalon 4.0 beta 2. <link href="jesktop-block/jesktop.sar">Click&nbsp;here</link>. If you already have Avalon (3.1a1 only) installed, then this sar file can be deployed into that (minimum version of 10th June 2001).  Just download <link href="http://jakarta.apache.org/builds/jakarta-avalon/nightly/2001-06-10/jakarta-avalon-phoenix-src.tar.gz">Avalon/Phoenix </link> from Apache and put the sar file in the apps directory of Avalon after doing a "build distributables" to make the binary from of Avalon/Pheonix (which you then have to unzip!.
-      </p>
-    </s1>
-    -->
     <s1 title="Jars and Interfaces for use with other projects">
       <p><strong>If you are a developer of a GUI app and want to include jars or classes to make it Jesktop compatible.</strong></p>
       <p>
@@ -94,7 +80,7 @@
    </body>
   <footer>
     <legal>
-      Copyright (c) @year@ The Jesktop Project All rights reserved.
+      Copyright (c) @year@ The Jesktop Project Committers. All rights reserved.
     </legal>
   </footer>
 </document>

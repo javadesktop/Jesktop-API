@@ -18,17 +18,8 @@
   <body>
     <s1 title="The future">
       <p>     
-	The development of Jesktop is closely mirroring that of Avalon.  Avalon
-	will gain server blocks (http, smtp, pop3 imap, dns, nntp ++++).  At the
-	same time Jesktop will gain applications too. the majority of those will
-	not be from the Jesktop team but from the other formerly unrelated
-	projects.  These teams hopefully will make their apps dual mode -
-	capable of running from the command line and inside Jesktop.
-      </p>	
-      <p>     
-	We also see ourselves extending the functionality of the desktop
-	itself. All of these features are planned (some will rely on
-	improvements to Avalon).      
+	We see ourselves extending the functionality of the desktop
+	itself. All of these features are planned.      
       </p>
       <ul>
         <li>
@@ -61,7 +52,7 @@
  	  Better control of window positions and size at launch.        
         </li>
         <li>
-	  More Shells.  - Ant may well be improved soon so that all of its commands can be invoked from a command line type console inside Jesktop. - we will also have commands that are Avalon and Jesktop specific e.g. "Shutdown".      
+	  More Shells.  - Ant may well be improved soon so that all of its commands can be invoked from a command line type console inside Jesktop. - we will also have commands that are NanoContainer and Jesktop specific e.g. "Shutdown".      
         </li>
         <li>	  
           Security polices for Jars. - things like clock that require no special resources, can run inside a sandbox. - other applications can ask for permission to read/write to specific directories and other permissions.
@@ -71,7 +62,7 @@
   </body>
   <footer>
     <legal>
-      Copyright (c) @year@ The Jesktop Project All rights reserved.
+      Copyright (c) @year@ The Jesktop Project Committers. All rights reserved.
     </legal>
   </footer>
 </document>

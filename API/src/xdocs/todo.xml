@@ -11,18 +11,9 @@
  <actions priority="high">
   <action context="design">
     New Command shell.  Ant based? 
-  </action>
+  </action> 
   <action context="design">
-    Persuade Avalon team to implement "interfaces for promotion" so that we can interoperate with other blocks.
-  </action>  
-  <action context="design">
-    Persuade Avalon team to enhance deserialization logic to allow classes from alternate classloaders.
-  </action>  
-  <action context="design">
-    Implement internationalization.  Hopefully with Avalon's XMLResourceBundle.
-  </action>  
-  <action context="design">
-    Make Kernel and window managers multi-user.  Possible to utilize a forthcoming Avalon block (which may allow integration with underlying OS as a non default implementation).
+    Make Kernel and window managers multi-user.
   </action>  
   <action context="code">  
     Security policies for apps

@@ -19,8 +19,8 @@
 
   <property name="name" value="jesktop-api"/>
   <property name="Name" value="Jesktop API"/>
-  <property name="version" value="1.0"/>
-  <property name="year" value="2001"/>
+  <property name="version" value="2.0"/>
+  <property name="year" value="2004"/>
 
   <!--
     these are here only for those who use jikes compiler. For other

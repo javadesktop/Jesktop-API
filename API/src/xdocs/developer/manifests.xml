@@ -63,8 +63,8 @@
 &lt;?xml version="1.0"?&gt;
 &lt;applications&gt;
 	&lt;default-application target-name="Tools/Clock"
-	  icon32="org/apache/avalon/jesktop/apps/clock/Clock.gif"
-	  icon16="org/apache/avalon/jesktop/apps/clock/ClockSmall.gif"/&gt;
+	  icon32="net/jesktop/apps/clock/Clock.gif"
+	  icon16="net/jesktop/apps/clock/ClockSmall.gif"/&gt;
 	&lt;application&gt;
 		&lt;display-name&gt;Clock&lt;/display-name&gt;
 		&lt;launchable-target-name&gt;Tools/Clock&lt;/launchable-target-name&gt;
@@ -84,7 +84,7 @@
 		&lt;display-name&gt;Image Viewer&lt;/display-name&gt;
 		&lt;launchable-target-name&gt;Tools/ImageViewer&lt;/launchable-target-name&gt;
 		&lt;class&gt;org.jesktop.apps.imageviewer.ImageViewer&lt;/class&gt;
-		&lt;application-config-file&gt;org/apache/avalon/jesktop/apps/imageviewer/ImageViewer.xml&lt;/application-config-file&gt;
+		&lt;application-config-file&gt;net/jesktop/apps/imageviewer/ImageViewer.xml&lt;/application-config-file&gt;
 	&lt;/application&gt;
 	&lt;application&gt;
 		&lt;display-name&gt;Drag Monitor&lt;/display-name&gt;
@@ -94,13 +94,13 @@
 &lt;/applications&gt;
       </source>
       <p>
-        The application specific file for Imageviewer.  The file name is <em>org/apache/avalon/jesktop/apps/imageviewer/ImageViewer.xml</em>:
+        The application specific file for Imageviewer.  The file name is <em>net/jesktop/apps/imageviewer/ImageViewer.xml</em>:
       </p>
       <source>
 &lt;?xml version="1.0"?&gt;
 &lt;application&gt;
-  &lt;icons icon32="org/apache/avalon/jesktop/apps/imageviewer/ImageViewer32.gif"
-    icon16="org/apache/avalon/jesktop/apps/imageviewer/ImageViewer16.gif" /&gt;
+  &lt;icons icon32="net/jesktop/apps/imageviewer/ImageViewer32.gif"
+    icon16="net/jesktop/apps/imageviewer/ImageViewer16.gif" /&gt;
 &lt;/application&gt;
       </source>
     </s1>
@@ -147,7 +147,7 @@
   </body>
   <footer>
     <legal>
-      Copyright (c) @year@ The Jesktop Project All rights reserved.
+      Copyright (c) @year@ The Jesktop Project Committers. All rights reserved.
     </legal>
   </footer>
 </document>

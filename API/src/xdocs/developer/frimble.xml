@@ -45,7 +45,7 @@
       	We see frimbles being created for general use that would give different views of contained components.  We could develop a Frimble that uses a tabbed pane concept of containment. The tabs would be the windows and they might have a common menu bar that switched as the tabbed were changed.  The thing would be novel but flawed as it is often nice to arrange your frames for special needs... i.e. reading from window A, whilst typing something else in Window B.
       </p>    
       <p>
-        A Network appliance manufacturer that wanted to deliver a new appliance might create their own frimble mechanism with some way of preserving pixel space on their resolution restricted device, whilst still allowing all of the benefits of downloaded and hot installable java GUI applications.  They might choose some drop-down type of launcher and running app changer.  The same for hand held appliance manufacturers.  Of course, the chips would have to beefier that today's (Dec 2000) Dragonball processors as The full JVM is required for Avalon and Jesktop and not the KVM as is popular at the moment.
+        A Network appliance manufacturer that wanted to deliver a new appliance might create their own frimble mechanism with some way of preserving pixel space on their resolution restricted device, whilst still allowing all of the benefits of downloaded and hot installable java GUI applications.  They might choose some drop-down type of launcher and running app changer.  The same for hand held appliance manufacturers.  Of course, the chips would have to beefier that today's (Dec 2000) Dragonball processors as The full JVM is required for NanoContainer and Jesktop and not the KVM as is popular at the moment.
       </p>
     </s1>    
     <s1 title="How to port your GUI app to use Frimble">
@@ -123,7 +123,7 @@
   </body>
   <footer>
     <legal>
-      Copyright (c) @year@ The Jesktop Project All rights reserved.
+      Copyright (c) @year@ The Jesktop Project Committers. All rights reserved.
     </legal>
   </footer>
 </document>

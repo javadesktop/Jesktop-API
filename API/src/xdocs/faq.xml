@@ -7,7 +7,7 @@
 <faq>
   <question>What is Jesktop?</question>
   <answer>
-        <p>Jesktop is a desktop system written in Java for Java GUI apps. It runs on top of Avalon</p>
+        <p>Jesktop is a desktop system written in Java for Java GUI apps. It runs on top of NanoContainer</p>
   </answer>
 </faq>
 <faq>
@@ -41,9 +41,9 @@
   </answer>
 </faq>
 <faq>
- <question>What is Avalon?</question>
+ <question>What is NanoContainer?</question>
  <answer>
-        <p>Avalon is a server framework from Apache.  Read <link href="avalon.html">this</link></p>
+        <p>NanoContainer is a component framework hosted at Codehaus.  Read the <link href="http://www.nanocontainer.org">NanoContainer</link> site.</p>
   </answer>
 </faq>
 

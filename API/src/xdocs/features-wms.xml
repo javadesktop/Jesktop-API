@@ -23,7 +23,7 @@
     </s1>
     <s1 title="Detailed">
       <p>
-        Window managers are implemented using Avalon's component architecture.  This means that there are plugable in a configuration file. At some point in the future Avalon will provide a hot plugable facility, at which point the user will be able to chose a new Window Manager inside Jesktop and switch to it.
+        Window managers are implemented using PicoContainer/NanoContainer's component architecture.  This means that there are plugable in a configuration file. At some point in the future we will provide a hot plugable facility, at which point the user will be able to chose a new Window Manager inside Jesktop and switch to it.
       </p>
       <p>
         At this stage what we mean by window manager is the style and placement of the controls for:
@@ -52,7 +52,7 @@
         <li><strong>WindozeWindowManager2</strong> This is the Windows style window manager using a JFrame containment mechanism.  This means that each launched app appears on the host operating system's list of frames (or window in Window's speak).</li>
       </ul>
       <p>
-        To switch between them, edit assembly.xml and change the reference from WindozeWindowManager1 to WindozeWindowManager2 (or v.v.).  This can be done before vuilding, by editing the assembly.xml file in &lt;jesktop root&gt;/conf, or after first deployment of Jesktop in Avalon/dist/apps/jesktop/config/  <strong>This is really easy to do</strong>
+        To switch between them, edit assembly.xml and change the reference from WindozeWindowManager1 to WindozeWindowManager2 (or v.v.).  This can be done before vuilding, by editing the composition.js file in &lt;jesktop root&gt;  <strong>This is really easy to do</strong>
       </p>
     </s1>
     <s1 title="The future">
@@ -63,7 +63,7 @@
   </body>
   <footer>
     <legal>
-      Copyright (c) @year@ The Jesktop Project All rights reserved.  Windows(tm) copyright Microsoft.
+      Copyright (c) @year@ The Jesktop Project Committers, All rights reserved.  Windows(tm) copyright Microsoft.
     </legal>
   </footer>
 </document>

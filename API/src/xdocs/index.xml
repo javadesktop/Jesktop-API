@@ -7,8 +7,8 @@
     <title>Jesktop Documentation</title>
     <subtitle>Introduction</subtitle>
     <authors>
-      <person id="WB" name="William Beebe" email="bill_beebe@yahoo.com"/>
       <person id="PH" name="Paul Hammant" email="Paul_Hammant@yahoo.com"/>
+      <person id="WB" name="William Beebe" email="bill_beebe@yahoo.com"/>
     </authors>
     <notice>
       Jesktop documentation is under construction.  Everything you
@@ -18,10 +18,10 @@
   <body>
     <s1 title="What is it?">
       <p>
-      	The Jesktop project is a desktop system written in Java that can have GUI applications installed into it.  It is dependant upon Avalon which is a server framework from Apache.  Avalon itself is going to change the way we think of Java based server computing.
+      	The Jesktop project is a desktop system written in Java that can have GUI applications installed into it.  It is semi-dependant upon NanoContainer which is a server framework from Apache.  NanoContainer and Constructor Dependency Injection are going to change the way we think of Java based component computing.
       </p>
       <p>
-      	Jesktop has been under construction since November 2000.  It's team was founded by people building Portable Java Environment (PJE) since early 2000.
+      	Jesktop has been under construction since November 2000.  It's team was founded by people building William's Portable Java Environment (PJE) since early 2000.
       </p>
 
     </s1>
@@ -31,10 +31,10 @@
           To have a fully functional Java desktop environment running on a fully functional Java operating system that is portable across a number of host operating systems, or if there is JDK support in a BIOS layer, without a host operating system.
         </li>
         <li>
-          To have a single CD installation of Linux (or other Java capable OS) without it's own applications, but with Avalon, Jesktop and many Java apps pre-configured.
+          To have a single CD installation of Linux (or other Java capable OS) without it's own applications, but with NanoContainer, Jesktop and many Java apps pre-configured.
         </li>
         <li>
-          To see the Jesktop and Avalon used widely by Java enthusiasts and deployed on yet to be created Network appliances and palm sized devices (when palm sized devices support J2SE).  That's right, we see this running on small devices.  The attraction to hardware manufactureres is obvious - a standard open source OS layer that can support multiple applications safely.
+          To see the Jesktop and NanoContainer used widely by Java enthusiasts and deployed on yet to be created Network appliances and palm sized devices (when palm sized devices support J2SE).  That's right, we see this running on small devices.  The attraction to hardware manufactureres is obvious - a standard open source OS layer that can support multiple applications safely.
         </li>
         <li>
           To see thousands of GPL, MPL, SPL, Commercial etc. etc. apps runnable inside Jesktop.  All will be hot installable, reinstallable and de-installable.  No reboot/restart necessary.  No questions asked.
@@ -73,7 +73,7 @@
     </s1>
     <s1 title="Approach">
       <p>
-	Jesktop and Avalon work within the confines of Sun's JDK implementation. If there are classes needed that are not supplied by the JDK, then they are written either as part of the project or in a seperate jar. We are not seeking to replace or re-write JDK packages, we'll use what Sun provide. If there is something that is needed (in our opinion) in the JDK, then we'll use the bug parade and community process to raise the issue. We are not seeking to use clean-room JVMs, we'll use virtual machines from Sun, IBM, Blackdown etc as long as they are J2SE compatible. We are not trying to coerce traditional main() applications to run inside Jesktop. For various reasons, we have specified a different (but not incompatible) mechanism than the standalone "main" concept.
+	Jesktop and NanoContainer work within the confines of Sun's JDK implementation. If there are classes needed that are not supplied by the JDK, then they are written either as part of the project or in a seperate jar. We are not seeking to replace or re-write JDK packages, we'll use what Sun provide. If there is something that is needed (in our opinion) in the JDK, then we'll use the bug parade and community process to raise the issue. We are not seeking to use clean-room JVMs, we'll use virtual machines from Sun, IBM, Blackdown etc as long as they are J2SE compatible. We are not trying to coerce traditional main() applications to run inside Jesktop. For various reasons, we have specified a different (but not incompatible) mechanism than the standalone "main" concept.
       </p>
     </s1>
     <s1 title="Notice">
@@ -87,7 +87,7 @@
           <link href="api/index.html">JavaDocs</link>
         </li>
         <li>
-          <link href="http://jakarta.apache.org/avalon/index.html">Avalon Project</link>
+          <link href="http://www.nanocontainer.org">NanoContainer</link>
         </li>
         <li>
           <link href="http://www.geocities.com/bill_beebe/cc10.html">William's history of PJE and Jesktop pages</link>
@@ -97,7 +97,7 @@
   </body>
   <footer>
     <legal>
-      Copyright (c) @year@ The Jesktop Project All rights reserved.
+      Copyright (c) @year@ The Jesktop Project Committers. All rights reserved.
     </legal>
   </footer>
 </document>
