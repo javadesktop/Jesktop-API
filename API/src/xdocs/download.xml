@@ -21,14 +21,14 @@
        <strong>Using Netscape or Mozilla?</strong> If you're using Netscape for downloading, you might want to use the "Save As" feature as prompted via a right click.  This is because Netscape thinks it should install jars into itself if left-clicked.  Doh!
       </p>
     </s1>
-    <s1 title="Jesktop Implementation">
+    <s1 title="Jesktop Reference Implementation">
       <p>
-        This is hosted by at sourceforge.<link href="http://www.jesktop.com">here</link>.  
+        This is hosted by sourceforge at <link href="http://www.jesktop.com">http://www.jesktop.com</link>.
       </p>
     </s1>    
     <s1 title="Applications for Jesktop">
       <p>
-        Applications for Jesktop are listed on the <link href="http://jesktopapps.sourceforge.net">www.jesktopapps.sourceforge.net</link> website.  There are a couple of applications that come with Jesktop from the Apache site - "Explorer" and some miscellaenous apps.
+        Applications for Jesktop are listed on the <link href="http://www.jesktop.net">www.jesktop.net</link> website.  There are a couple of applications that come with Jesktop from the Apache site - "Explorer" and some miscellaenous apps.
       </p>
     </s1>
     <s1 title="Jesktop API Source">
