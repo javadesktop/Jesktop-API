@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<book software="Jesktop" title="Jesktop Documentation" copyright="@year@ The Apache Software Foundation">
+<book software="Jesktop" title="Jesktop Documentation" copyright="@year@ The Jesktop Project Committers">
   <page id="index" label="Index" source="index.xml"/>
   <page id="downloads" label="Downloads" source="download.xml"/>
   <page id="installation" label="Installation" source="installation.xml"/>

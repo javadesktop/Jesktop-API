@@ -18,7 +18,7 @@
   <body>
     <s1 title="What is it?">
       <p>
-      	The Jesktop project is a desktop system written in Java that can have GUI applications installed into it.  It is semi-dependant upon <link href="http://www.nanocontainer.org">NanoContainer</link> which is a server framework from Apache.  <link href="http://www.nanocontainer.org">NanoContainer</link> and Constructor Dependency Injection are going to change the way we think of Java based component computing.
+      	The Jesktop project is a desktop system written in Java that can have GUI applications installed into it.  It is semi-dependant upon <link href="http://www.nanocontainer.org">NanoContainer</link> which is a component framework at Codehaus.  <link href="http://www.nanocontainer.org">NanoContainer</link> and Constructor Dependency Injection are going to change the way we think of Java based component computing.
       </p>
       <p>
       	Jesktop has been under construction since November 2000.  It's team was founded by people building William's Portable Java Environment (PJE) since early 2000.

@@ -29,7 +29,7 @@
       <p>Jesktop, uses Apache's Ant system for building the classes and jars from source.  They both include their own version of Ant in their distribution. You don't need to download and install Ant separately.  In fact, if you have Ant installed, you may get some problems building Jesktop as the two versions might be incompatible.</p>
       <p>For those that haven't heard the news, Ant is the defacto standard for building Java based projects.  Read about it at Apache's <link href="http://jakarta.apache.org/ant">Ant website</link></p>
     </s1>
-    <s1 title="Installation using the Full-Source distribution of Jesktop (which includes <link href="http://www.nanocontainer.org">NanoContainer</link>)">
+    <s1 title="Installation using the Full-Source distribution of Jesktop (which includes NanoContainer)">
     <p>
         There are multiple downloads for you to do, that range in size from 15Kb (JCalculator app) to 1.0Mb (Jesktop's source with <link href="http://www.nanocontainer.org">NanoContainer</link>). See <link href="downloads.html">Downloads</link> page.
     </p>
