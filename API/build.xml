@@ -282,7 +282,7 @@
 
     <mkdir dir="dist/full_source_distributions"/>
 
-    <zip zipfile="dist/full_source_distributions/Jesktop_FullSourceDistribution.zip"
+    <zip zipfile="dist/full_source_distributions/JesktopAPI_FullSourceDistribution.zip"
          basedir="." >
 
       <include name="lib/**"/>
@@ -296,7 +296,7 @@
       <exclude name="imported/**"/>
     </zip>
 
-    <tar tarfile="dist/full_source_distributions/Jesktop_FullSourceDistribution.tar"
+    <tar tarfile="dist/full_source_distributions/JesktopAPI_FullSourceDistribution.tar"
          basedir=".">
 
       <include name="lib/**"/>
@@ -310,10 +310,10 @@
       <exclude name="imported/**"/>
 
     </tar>
-    <gzip zipfile="dist/full_source_distributions/Jesktop_FullSourceDistribution.tar.gz"
-          src="dist/full_source_distributions/Jesktop_FullSourceDistribution.tar"
+    <gzip zipfile="dist/full_source_distributions/JesktopAPI_FullSourceDistribution.tar.gz"
+          src="dist/full_source_distributions/JesktopAPI_FullSourceDistribution.tar"
     />
-    <delete file="dist/full_source_distributions/Jesktop_FullSourceDistribution.tar" />
+    <delete file="dist/full_source_distributions/JesktopAPI_FullSourceDistribution.tar" />
 
     <antcall target="dl-page">
       <param name="dir" value="dist/full_source_distributions"/>

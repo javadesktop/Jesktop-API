@@ -61,23 +61,6 @@
       </li>
     </ol>
     </s1>
-
-    <s1 title="Step by Step Installation from Perforce source depot">
-    <ol>
-      <li>
-        As part of your perforce setup, choose a place on your hard drive for the depot.  There may, in time, be more than just Jesktop in there, so we have a dir like c:\oss_perforce_co_uk\
-      </li>
-      <li>
-        Do a "sync to head revision" on the Jesktop node.  This may be slow for the first run, but will be very fast for second and subsequent.
-      </li>
-      <li>
-        Follow instructions above from "build" and downwards.
-      </li>
-      <li>
-        Every time you want to see the new version, just do another sync and run the build batch file.  Sometimes "build clean" is a good idea if we have been deleting files/classes.  Perforce handles that very well but Ant does not.
-      </li>
-    </ol>
-    </s1>
   </body>
   <footer>
     <legal>

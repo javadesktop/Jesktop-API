@@ -37,7 +37,7 @@
     <s1 title="Jesktop API Source">
       <p><strong>If you want to download and compile your own version of Jesktop API</strong></p>
       <p>
-	A snapshot of the source depot.  You'll have to do some file copying and run some build scripts before running Jesktop.  Click - <link href="full_source_distributions/Jesktop_API_FullSourceDistribution.zip">zip</link> <link href="full_source_distributions/Jesktop_API_FullSourceDistribution.tar.gz">tar.gz</link>.
+	A snapshot of the source depot.  You'll have to do some file copying and run some build scripts before running Jesktop.  Click - <link href="full_source_distributions/JesktopAPI_FullSourceDistribution.zip">zip</link> <link href="full_source_distributions/JesktopAPI_FullSourceDistribution.tar.gz">tar.gz</link>.
       </p>
       <p>
         For a raw view of the directory (so you can see file sizes) <link href="full_source_distributions/index.html">see this</link>.
@@ -64,16 +64,16 @@
     <s1 title="Jars and Interfaces for use with other projects">
       <p><strong>If you are a developer of a GUI app and want to include jars or classes to make it Jesktop compatible.</strong></p>
       <p>
-        The API for Jesktop contained applications is available <link href="dist/jesktop-frimble.jar">here</link> (@jesktop-frimble.jar.size@).  This is useful if you are planning to create your own Jesktop <strong>compatible</strong> applications.  For your own development, it is sufficuent for you to include the contained classes you jar.
+        The API for Jesktop contained applications is available <link href="export/jesktop-frimble.jar">here</link> (@jesktop-frimble.jar.size@).  This is useful if you are planning to create your own Jesktop <strong>compatible</strong> applications.  For your own development, it is sufficuent for you to include the contained classes you jar.
       </p>
       <p>
-        Three very simple demos that represent complete jesktop compatible applications are <link href="dist/jesktop-frimble-demoapp1.jar">here</link> (@jesktop-frimble-demoapp1.jar.size@), <link href="dist/jesktop-frimble-demoapp2.jar">here</link> (@jesktop-frimble-demoapp2.jar.size@) and <link href="dist/jesktop-frimble-demoapp3.jar">here</link> (@jesktop-frimble-demoapp3.jar.size@).  They contain source.
+        Three very simple demos that represent complete jesktop compatible applications are <link href="export/jesktop-frimble-demoapp1.jar">here</link> (@jesktop-frimble-demoapp1.jar.size@), <link href="export/jesktop-frimble-demoapp2.jar">here</link> (@jesktop-frimble-demoapp2.jar.size@) and <link href="export/jesktop-frimble-demoapp3.jar">here</link> (@jesktop-frimble-demoapp3.jar.size@).  They contain source.
       </p>      
       <p>
 	FrimbleDemo demonstrates the use of the abstracted Frame/JinternalFrame Frimble library.  FrimbleDemo2 shows an alternative way of doing the same (perhaps simpler).  FrimbleDemo3 (in progress) shows an alternative being compatible with JavaWebStart too.
       </p>
       <p>
-        The API for Jesktop's Kernel is available <link href="dist/jesktop-api.jar">here</link> (@jesktop-api.jar.size@).  This is useful if you are planning to create your own Jesktop <strong>aware</strong> applications. This is a deeper and optional level to that above.
+        The API for Jesktop's Kernel is available <link href="export/jesktop-api.jar">here</link> (@jesktop-api.jar.size@).  This is useful if you are planning to create your own Jesktop <strong>aware</strong> applications. This is a deeper and optional level to that above.
       </p>         
       <p>
         For a raw view of the directory (so you can see file sizes) <link href="export/index.html">see this</link>

@@ -8,6 +8,12 @@
       <person id="PH" name="Paul Hammant" email="Paul_Hammant@yahoo.com"/>
   </devs>
 
+ <release version="1.0 (alpha 21)" date="Jan 14, 2002">
+  <action dev="PH" type="update">
+    Move to sourceforge
+  </action>
+ </release>
+
  <release version="1.0 (alpha 21)" date="Oct 13, 2001">
   <action dev="PH" type="update">
     Bug fixes for Control panel.

@@ -20,7 +20,7 @@
 	Our CVS repository is mounted at SourceForge.	
       </p>
       <p>
-	See SourceForge's <link href="http://sourceforge.net/cvs/?group_id=43838">page</link> for CVS configuration details.  There are multiple modules.  See <link href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/jesktopapps/">page</link> for the module names.  They will all have to be placed relatively next to each other in a directory for building to work.  We use Ant (see below) to build the apps.
+	See SourceForge's <link href="http://sourceforge.net/cvs/?group_id=43962">page</link> for CVS configuration details.  There are multiple modules.  See <link href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/jesktop/">page</link> for the module names.  They will all have to be placed relatively next to each other in a directory for building to work.  We use Ant (see below) to build the apps.
       </p>            
     </s1>
     <s1 title="A word about Ant">
