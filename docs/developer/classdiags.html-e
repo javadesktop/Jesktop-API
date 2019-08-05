@@ -1,0 +1,47 @@
+<HTML><HEAD><TITLE>Jesktop Documentation</TITLE><LINK href="resources/simple.css" rel="stylesheet" title="Simple Style" type="text/css"></HEAD><BODY><TABLE border="0" cellpadding="0" cellspacing="0"><TR><TD width="100%"><P class="title"><STRONG>Jesktop Documentation</STRONG><BR><EM>Class Diagrams</EM></P></TD><TD valign="top"><CENTER><IMG src="resources/jesktop-banner.jpg"><BR><IMG src="resources/TheJavaDesktop.jpg"></CENTER></TD></TR></TABLE><P class="author">
+            by
+            <A href="mailto:bill_beebe@yahoo.com">William Beebe</A>, <A href="mailto:Paul_Hammant@yahoo.com">Paul Hammant</A></P><TABLE border="1" cellspacing="0"><TR><TD bgcolor="#f0f0f0" valign="top" width="20%"><DIV class="book">
+  <A href="index.html">Index</A><BR>
+  <A href="constraints.html">Programming Constraints</A><BR>
+  <A href="applications.html">Applications</A><BR>
+  <A href="frimble.html">Frimble</A><BR>
+  <A href="javawebstart.html">Java Web Start</A><BR>
+  <A href="decorators.html">Decorators</A><BR>
+  <A href="applications2.html">Advanced Apps</A><BR>
+  <A href="mainfests.html">Manifests</A><BR>
+  Class Diagrams<BR>
+</DIV></TD><TD valign="top" width="80%"><DOCUMENT>
+  
+  <BODY>
+    <H1>Introduction</H1><DIV class="s1">
+      <P>     
+	These class diagrams show various parts of the Jesktop system.  A complete diagram would be too messy to show, so sections are shown here.
+      </P> 
+    </DIV>
+    <H1>Class Diagrams</H1><DIV class="s1">
+    <H2>Kernel</H2><DIV class="s2">    
+      <IMG alt="Kernel Class Diagram" class="figure" src="images/classdiag_kernel.gif">
+      <P>           
+	This diagram shows the Kernel as an abstract class <EM>DesktopKernel</EM> and it's implementation <EM>DesktopKernelImpl</EM>.  Also shown are <EM>AppLauncher</EM>, <EM>AppInstaller</EM> and <EM>ImageRepository</EM> with their implementations.  These are parts of the Kernel really but have been moved out of the Kernel for reasons of modularity.
+      </P> 	  
+    </DIV>    
+    <H2>Frimble plus FrimbleDemo</H2><DIV class="s2">    
+      <IMG alt="Frimble Class Diagram" class="figure" src="images/classdiag_frimble.gif">
+      <P>           
+	This diagram shows the <EM>Frimble</EM> abstract class and it's two final extensions <EM>JFrameFrimble</EM> and <EM>JInternalFrameFrimble</EM>.  Also shown are <EM>FrimbleAware</EM> (the interface that some applications will implement) and <EM>FrimbleEvent</EM>, <EM>FrimbleListener</EM> &amp; <EM>FrimbleAdapter</EM> (the event handling helper classes).  Lastly <EM>FrimbleDemo</EM> shows an app that implements <EM>FrimbleAware</EM>.
+      </P> 	  
+    </DIV>
+    <H2>Example Window Managers</H2><DIV class="s2">    
+      <IMG alt="Window Managers Class Diagram" class="figure" src="images/classdiag_windowmanagers.gif">
+      <P>           
+	Very much a work in progress, this diagram shows the test implementations of the <EM>WindowManager</EM> interface.  All are working to various degrees, but only <EM>WindozeWindowManager</EM> is being polished.  At some point the useful common code will be rolled in to a new class called <EM>AbstractWindowManager</EM> and the other window managers (that still have merit) moved to separate packages.
+      </P> 	  
+    </DIV>    
+    </DIV>
+   </BODY>   
+  
+</DOCUMENT></TD></TR></TABLE><P class="legal">
+      Copyright (c) 2004 The Jesktop Project Committers. All rights reserved.
+    <BR><CENTER><TABLE><TR><TD>
+              
+              <A href="http://sourceforge.net"><IMG alt="SourceForge Logo" border="0" height="31" src="" width="88"></A></TD><TD><A href="http://sourceforge.net/projects/jesktop"></A></TD></TR></TABLE></CENTER></P></BODY></HTML>

@@ -1,0 +1,74 @@
+<HTML><HEAD><TITLE>Jesktop Documentation</TITLE><LINK href="resources/simple.css" rel="stylesheet" title="Simple Style" type="text/css"></HEAD><BODY><TABLE border="0" cellpadding="0" cellspacing="0"><TR><TD width="100%"><P class="title"><STRONG>Jesktop Documentation</STRONG><BR><EM>Installation</EM></P></TD><TD valign="top"><CENTER><IMG src="resources/jesktop-banner.jpg"><BR><IMG src="resources/TheJavaDesktop.jpg"></CENTER></TD></TR></TABLE><P class="author">
+            by
+            <A href="mailto:bill_beebe@yahoo.com">William Beebe</A>, <A href="mailto:Paul_Hammant@yahoo.com">Paul Hammant</A></P><TABLE border="1" cellspacing="0"><TR><TD bgcolor="#f0f0f0" valign="top" width="20%"><DIV class="book">
+  <A href="index.html">Index</A><BR>
+  <A href="downloads.html">Downloads</A><BR>
+  Installation<BR>
+  <A href="cvs.html">The source repository</A><BR>
+  <A href="contrib.html">Contributors</A><BR>
+  <A href="contact.html">Mail-lists</A><BR>
+  <A href="volunteers.html">Volunteers</A><BR>
+<HR>
+  <A href="features.html">Features</A><BR>
+  <A href="features-wm.html">Window Managers</A><BR>
+  <A href="features-skins.html">Skins</A><BR>
+  <A href="future.html">Where Jesktop is heading</A><BR>
+  <A href="builtinapps.html">Built-in applications</A><BR>
+  <A href="multilicense.html">Multi-license environment</A><BR>
+  <A href="hosts.html">Host operating systems</A><BR>  
+  <A href="tools.html">Tools for building Jesktop</A><BR>    
+<HR>
+  <A href="developer/index.html">Developer Docs</A><BR>
+<HR>
+  <A href="faq.html">FAQ</A><BR>
+  <A href="changes.html">Changes</A><BR>
+  <A href="bugparade.html">Sun's Bug Parade</A><BR>
+  <A href="todo.html">Todo</A><BR>
+</DIV></TD><TD valign="top" width="80%"><DOCUMENT>
+  
+  <BODY>
+    <H1>Dependancies</H1><DIV class="s1">
+      <P>Jesktop wants <A href="http://www.nanocontainer.org">NanoContainer</A>.  <A href="http://www.nanocontainer.org">NanoContainer</A> needs JDK1.4 (to be built) or JRE 1.4 (to run on).  To build Jesktop, you'll need to have set two environmental varables:</P>
+      <OL>
+        <LI>
+    	  <STRONG>JAVA_HOME</STRONG>  e.g. c:\jdk1.4
+        </LI>
+        <LI>
+          <STRONG>PATH</STRONG>  e.g. %PATH%;c:\jdk1.4\bin
+        </LI>
+      </OL>
+      <P>Jesktop, uses Apache's Ant system for building the classes and jars from source.  They both include their own version of Ant in their distribution. You don't need to download and install Ant separately.  In fact, if you have Ant installed, you may get some problems building Jesktop as the two versions might be incompatible.</P>
+      <P>For those that haven't heard the news, Ant is the defacto standard for building Java based projects.  Read about it at Apache's <A href="http://jakarta.apache.org/ant">Ant website</A></P>
+    </DIV>
+    <H1>Installation using the Full-Source distribution of Jesktop (which includes NanoContainer)</H1><DIV class="s1">
+    <P>
+        There are multiple downloads for you to do, that range in size from 15Kb (JCalculator app) to 1.0Mb (Jesktop's source with <A href="http://www.nanocontainer.org">NanoContainer</A>). See <A href="downloads.html">Downloads</A> page.
+    </P>
+    <OL>
+      <LI>
+        Download and unzip Jesktop and the separate applications zips.
+      </LI>
+      <LI>
+        Go into jesktop/ or the root directory of whichever application you have downloaded and run &quot;build&quot;.
+      </LI>
+      <LI>
+        Also from the command line run &quot;build docs&quot; for Jesktop to make these documents and the API docs.
+      </LI>
+      <LI>
+        Go into jesktop/phoenix/bin and run &quot;run&quot;
+      </LI>
+      <LI>
+        Using Simple installer locate jars in their &quot;dist&quot; directories and install them. See <A href="builtinapps.html">Built-in apps</A> for more.
+      </LI>
+      <LI>
+        Launch things from the Start button and play with them.
+      </LI>
+    </OL>
+    </DIV>
+  </BODY>
+  
+</DOCUMENT></TD></TR></TABLE><P class="legal">
+      Copyright (c) 2004 The Jesktop Project Committers. All rights reserved.
+    <BR><CENTER><TABLE><TR><TD>
+              
+              <A href="http://sourceforge.net"><IMG alt="SourceForge Logo" border="0" height="0" src="" width="0"></A></TD><TD><A href="http://sourceforge.net/projects/jesktop"></A></TD></TR></TABLE></CENTER></P></BODY></HTML>

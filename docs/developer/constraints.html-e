@@ -1,0 +1,38 @@
+<HTML><HEAD><TITLE>Jesktop Developer Documentation</TITLE><LINK href="resources/simple.css" rel="stylesheet" title="Simple Style" type="text/css"></HEAD><BODY><TABLE border="0" cellpadding="0" cellspacing="0"><TR><TD width="100%"><P class="title"><STRONG>Jesktop Developer Documentation</STRONG><BR><EM>Prgramming Constraints</EM></P></TD><TD valign="top"><CENTER><IMG src="resources/jesktop-banner.jpg"><BR><IMG src="resources/TheJavaDesktop.jpg"></CENTER></TD></TR></TABLE><P class="author">
+            by
+            <A href="mailto:Paul_Hammant@yahoo.com">Paul Hammant</A></P><TABLE border="1" cellspacing="0"><TR><TD bgcolor="#f0f0f0" valign="top" width="20%"><DIV class="book">
+  <A href="index.html">Index</A><BR>
+  Programming Constraints<BR>
+  <A href="applications.html">Applications</A><BR>
+  <A href="frimble.html">Frimble</A><BR>
+  <A href="javawebstart.html">Java Web Start</A><BR>
+  <A href="decorators.html">Decorators</A><BR>
+  <A href="applications2.html">Advanced Apps</A><BR>
+  <A href="mainfests.html">Manifests</A><BR>
+  <A href="classdiags.html">Class Diagrams</A><BR>
+</DIV></TD><TD valign="top" width="80%"><DOCUMENT>
+  
+  <BODY>
+    <H1>Programming constraints</H1><DIV class="s1">
+      <UL>
+        <LI>
+          <STRONG>Packaged as Jar</STRONG>.The application must be entirely contained within it's jar.  It may, after launch, create directories in the file system for storage of it's own work files and settings, but these should not be an installation requirement.  It may also be dependant on other jars - see the applications.xml documentation for how this should be indicated.
+        </LI>
+        <LI>
+          <STRONG>Empty Constructor.</STRONG>  The class that Jesktop should instantiate must have an empty constructor.  Jesktop does not call the main() method, though you may leave that in so that you can still run from the command line. 
+        </LI>
+        <LI>
+          <STRONG>Careful use of JFrame or JDialog.</STRONG>  The instantiatable class must extend JComponent (directly or indirectly), Jesktop provides a mechanism for JFrame-like containment and factories for JDialogs. This is called Frimble. If you want your app to be standalone as well as launchable inside Jesktop, then place your JFrame logic inside the main() method - see our example (FrimbleDemo).
+        </LI>
+        <LI>
+          <STRONG>Careful use of static.</STRONG>  Consider that the application may be lanched more than once.  When this happens, the same class loader will be used.  This means that there will be two instances of the main panel (or whatever) indie the same VM.  When the applications was coded to launch from the command line (java myclass etc.) that would never happen. It does now.  So if you use static, make sure it is for things that are for all instances.  This includes constants or &quot;set once&quot; things like language specific strings.  It should not include anything that may change or could be different per instance.  I (Paul H) have found that most of the times I have porting an app to Jesktop, I could safely remove the static keyword from variables and all would be fine.
+        </LI>        
+      </UL>          
+    </DIV>
+  </BODY>
+  
+</DOCUMENT></TD></TR></TABLE><P class="legal">
+      Copyright (c) 2004 The Jesktop Project Committers. All rights reserved.
+    <BR><CENTER><TABLE><TR><TD>
+              
+              <A href="http://sourceforge.net"><IMG alt="SourceForge Logo" border="0" height="31" src="" width="88"></A></TD><TD><A href="http://sourceforge.net/projects/jesktop"></A></TD></TR></TABLE></CENTER></P></BODY></HTML>

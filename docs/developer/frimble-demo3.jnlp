@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<!-- JNLP File for Frimble Demo #3 --> 
+<jnlp 
+  spec="1.0+" codebase="http://jesktop.sourceforge.net/" href="developer/frimble-demo3.jnlp"> 
+  <information> 
+    <title>Frimble Demo 3</title> 
+    <vendor>Jesktop Project</vendor> 
+    <!-- <homepage href="docs/help.html"/> -->
+    <description>A demo of Frimble as a JWS app.</description> 
+    <description kind="short">A demo of Frimble as a Java Web Start application.</description> 
+    <!--
+    <icon href="images/swingset2.jpg"/> 
+    -->
+    <offline-allowed/> 
+  </information> 
+  <!--
+  <security> 
+      <all-permissions/> 
+  </security> 
+  -->
+  <resources> 
+    <j2se version="1.3"/>
+    <jar href="/dist/export/jesktop_frimble_demo3.jar"/>
+    <jar href="/dist/export/jesktop_frimble.jar"/> 
+  </resources> 
+  <application-desc main-class="org.jesktop.frimble.demo3.FrimbleDemo"/> 
+</jnlp> 

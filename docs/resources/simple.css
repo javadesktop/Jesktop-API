@@ -1,0 +1,86 @@
+body {
+	background: white fixed no-repeat left top; 
+	color: black; 
+	font-family: sans-serif; 
+	margin: 2em 1em 2em 1em;
+}
+
+p.title {
+	text-align: left;
+	color: #005a9c;
+	font: large sans-serif;
+}
+
+h1 {
+	text-align: left;
+	color: #005a9c;
+	font: large sans-serif;
+}
+
+h2 {
+	text-align: left;
+	color: #005a9c;
+	font: italic large sans-serif;
+}
+
+h3 {
+	text-align: left;
+	color: #005a9c;
+	font: bold medium sans-serif;
+}
+
+h4 {
+	text-align: left;
+	color: #005a9c;
+	font: bold italic medium sans-serif;
+}
+
+div.book {
+	color: #000080;
+	background-color : #f0f0f0;
+}
+
+div.s1 {
+ }
+
+div.s2 {
+ }
+
+div.s3 {
+text-indent: 10%;
+ }
+
+div.s4 {
+text-indent: 10%;
+ }
+
+p {
+    padding: 10px 10px 10px 10px;
+    margin: 10px 20px 10px 20px;
+    text-align: justify;
+}
+
+p.note {
+    font-style: italic;
+}
+
+p.legal {
+	text-align: center;
+	font-size: xx-small;
+	font-family: sans-serif;
+	font-style: italic;
+}
+
+p.author { 
+	font-size: xx-small;
+	font-family: sans-serif;
+ }
+
+pre {
+	font-family: monospace;
+    margin: 20px 80px 20px 20px;
+}
+
+a:link { color: #005a9c }
+a:visited { color: #a00000 }
+a:active { color: #00a000 }

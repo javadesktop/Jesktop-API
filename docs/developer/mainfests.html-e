@@ -1,0 +1,151 @@
+<HTML><HEAD><TITLE>Jesktop Developer Documentation</TITLE><LINK href="resources/simple.css" rel="stylesheet" title="Simple Style" type="text/css"></HEAD><BODY><TABLE border="0" cellpadding="0" cellspacing="0"><TR><TD width="100%"><P class="title"><STRONG>Jesktop Developer Documentation</STRONG><BR><EM>Manifests</EM></P></TD><TD valign="top"><CENTER><IMG src="resources/jesktop-banner.jpg"><BR><IMG src="resources/TheJavaDesktop.jpg"></CENTER></TD></TR></TABLE><P class="author">
+            by
+            <A href="mailto:Paul_Hammant@yahoo.com">Paul Hammant</A></P><TABLE border="1" cellspacing="0"><TR><TD bgcolor="#f0f0f0" valign="top" width="20%"><DIV class="book">
+  <A href="index.html">Index</A><BR>
+  <A href="constraints.html">Programming Constraints</A><BR>
+  <A href="applications.html">Applications</A><BR>
+  <A href="frimble.html">Frimble</A><BR>
+  <A href="javawebstart.html">Java Web Start</A><BR>
+  <A href="decorators.html">Decorators</A><BR>
+  <A href="applications2.html">Advanced Apps</A><BR>
+  Manifests<BR>
+  <A href="classdiags.html">Class Diagrams</A><BR>
+</DIV></TD><TD valign="top" width="80%"><DOCUMENT>
+  
+  <BODY>
+    <H1>Introduction</H1><DIV class="s1">
+      <P>
+	Jesktop applications ship in jars.  The jar must contain a manifest that Jesktop can pick up on so that it know's what's inside the jar.  Jesktop's manifest is placed in a directory called JESKTOP-INF inside the jar.  The file name of the manifest is applications.xml and it is in XML format.
+      </P>
+    </DIV>
+    <H1>A simple example</H1><DIV class="s1">
+      <P>
+	This xml file contains details of the application that may be included in the jar.  Here is an example:
+      </P>
+      <PRE>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;applications&gt;
+  &lt;application single-instance=&quot;true&quot;&gt;
+    &lt;display-name&gt;Frimble Demo2&lt;/display-name&gt;
+    &lt;launchable-target-name&gt;Demos/FrimbleDemo2&lt;/launchable-target-name&gt;
+    &lt;class&gt;org.jesktop.frimble.demo2.FrimbleDemo2&lt;/class&gt;
+  &lt;/application&gt;
+&lt;/applications&gt;
+      </PRE>
+      <P>
+        That this says is that there is one application in the jar. It's name for the purposes of lookup is Demos/FrimbleDemo2, it has a certain class for launching and that Jesktop should ponly allow a single instance to run at any one time.
+      </P>
+    </DIV>
+    <H1>A more complex example</H1><DIV class="s1">
+      <P>
+        This example details four other concepts.
+      </P>
+      <OL>
+        <LI>
+    	  <STRONG>Muliple apps in one jar</STRONG> - the application element is repeating.
+        </LI>
+        <LI>
+          <STRONG>Default applications</STRONG> - of use when an application is not being installed, merely run in situ inside it's jar.
+        </LI>
+        <LI>
+          <STRONG>Icons to represent apps</STRONG> - used when listing the app on the start menu or in a file-system view.
+        </LI>
+        <LI>
+          <STRONG>Application specific config files</STRONG> - the config for the app in question is specified elsewhere.
+        </LI>
+      </OL>
+      <P>
+        The example:
+      </P>
+      <PRE>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;applications&gt;
+	&lt;default-application target-name=&quot;Tools/Clock&quot;
+	  icon32=&quot;net/jesktop/apps/clock/Clock.gif&quot;
+	  icon16=&quot;net/jesktop/apps/clock/ClockSmall.gif&quot;/&gt;
+	&lt;application&gt;
+		&lt;display-name&gt;Clock&lt;/display-name&gt;
+		&lt;launchable-target-name&gt;Tools/Clock&lt;/launchable-target-name&gt;
+		&lt;class&gt;org.jesktop.apps.clock.Clock&lt;/class&gt;
+	&lt;/application&gt;
+	&lt;application&gt;
+		&lt;display-name&gt;Directory Explorer&lt;/display-name&gt;
+		&lt;launchable-target-name&gt;Tools/DirectoryExplorer&lt;/launchable-target-name&gt;
+		&lt;class&gt;org.jesktop.windowmanagers.DirectoryExplorer&lt;/class&gt;
+	&lt;/application&gt;
+	&lt;application&gt;
+		&lt;display-name&gt;Text Viewer&lt;/display-name&gt;
+		&lt;launchable-target-name&gt;Tools/TextViewer&lt;/launchable-target-name&gt;
+		&lt;class&gt;org.jesktop.apps.notepad.TextViewer&lt;/class&gt;
+	&lt;/application&gt;
+	&lt;application&gt;
+		&lt;display-name&gt;Image Viewer&lt;/display-name&gt;
+		&lt;launchable-target-name&gt;Tools/ImageViewer&lt;/launchable-target-name&gt;
+		&lt;class&gt;org.jesktop.apps.imageviewer.ImageViewer&lt;/class&gt;
+		&lt;application-config-file&gt;net/jesktop/apps/imageviewer/ImageViewer.xml&lt;/application-config-file&gt;
+	&lt;/application&gt;
+	&lt;application&gt;
+		&lt;display-name&gt;Drag Monitor&lt;/display-name&gt;
+		&lt;launchable-target-name&gt;Tools/Misc/DragMonitor&lt;/launchable-target-name&gt;
+		&lt;class&gt;org.jesktop.apps.misc.DragMonitor&lt;/class&gt;
+	&lt;/application&gt;
+&lt;/applications&gt;
+      </PRE>
+      <P>
+        The application specific file for Imageviewer.  The file name is <EM>net/jesktop/apps/imageviewer/ImageViewer.xml</EM>:
+      </P>
+      <PRE>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;application&gt;
+  &lt;icons icon32=&quot;net/jesktop/apps/imageviewer/ImageViewer32.gif&quot;
+    icon16=&quot;net/jesktop/apps/imageviewer/ImageViewer16.gif&quot; /&gt;
+&lt;/application&gt;
+      </PRE>
+    </DIV>
+    <H1>Additional Jars</H1><DIV class="s1">
+      <P>
+        Each jar that contains application may also contain other jars containing classes or resources that must be mounted in the classpath during execution.  The following snippet illustrates Sun's XML parser and how an manifests may specify them as contained within the distribution.  They follow the applications element in the applications.xml manifest.
+      </P>
+      <PRE>
+&lt;additional-jars&gt;
+  &lt;jar where=&quot;contained&quot;&gt;lib/jaxp.jar&lt;/jar&gt;
+  &lt;jar where=&quot;contained&quot;&gt;lib/parser.jar&lt;/jar&gt;
+&lt;/additional-jars&gt;
+      </PRE>
+      <P>
+        This additional jar element may also indicate jars that are not contained within the distribution jar.  The following shows this in use:
+      </P>
+      <PRE>
+&lt;additional-jars&gt;
+  &lt;jar where=&quot;remote&quot;&gt;http://somewhere.com/some/thing.jar&lt;/jar&gt;
+&lt;/additional-jars&gt;
+      </PRE>
+    </DIV>
+    <H1>Rules</H1><DIV class="s1">
+      <P>
+        There are a number of rules to the use of this manifest.
+      </P>
+      <OL>
+        <LI>
+    	  <STRONG>Targets are launchable.</STRONG> Each application entry is a separate launchable target.  Multiple apps may share tha same code base and will be loaded via the same classloader so must be able to co-exist with ench other in one VM sharing static space.
+        </LI>
+        <LI>
+          <STRONG>Targets are launchable multiple times.</STRONG> Unless the single-instance=&quot;true&quot; attrible has been specified the target may be launched multiple times.  A classloading issue again in that static must be used carefully.
+        </LI>
+        <LI>
+          <STRONG>JComponent or JFrimble devived class</STRONG> The class that Jesktop instantiates must be a subclass of JComponent or JFrimble.  JFrame is <STRONG>not</STRONG> allowed on this class.  Use one of the alternative Frimble solutions instead.
+        </LI>
+      </OL>
+    </DIV>
+    <H1>Interoperation with the normal jar manifest</H1><DIV class="s1">
+      <P>
+        If you want to have an application that is dual mode in that it can run standalone as well as inside Jesktop, you'll want to have a META-INF/manifest.mf file that specifies the executable nature of the jar.  This normal Java feature is completely supported.
+      </P>
+    </DIV>
+  </BODY>
+  
+</DOCUMENT></TD></TR></TABLE><P class="legal">
+      Copyright (c) 2004 The Jesktop Project Committers. All rights reserved.
+    <BR><CENTER><TABLE><TR><TD>
+              
+              <A href="http://sourceforge.net"><IMG alt="SourceForge Logo" border="0" height="31" src="" width="88"></A></TD><TD><A href="http://sourceforge.net/projects/jesktop"></A></TD></TR></TABLE></CENTER></P></BODY></HTML>

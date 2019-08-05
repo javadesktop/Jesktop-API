@@ -1,0 +1,114 @@
+<HTML><HEAD><TITLE>Jesktop Documentation</TITLE><LINK href="resources/simple.css" rel="stylesheet" title="Simple Style" type="text/css"></HEAD><BODY><TABLE border="0" cellpadding="0" cellspacing="0"><TR><TD width="100%"><P class="title"><STRONG>Jesktop Documentation</STRONG><BR><EM>Introduction</EM></P></TD><TD valign="top"><CENTER><IMG src="resources/jesktop-banner.jpg"><BR><IMG src="resources/TheJavaDesktop.jpg"></CENTER></TD></TR></TABLE><P class="author">
+            by
+            <A href="mailto:Paul_Hammant@yahoo.com">Paul Hammant</A>, <A href="mailto:bill_beebe@yahoo.com">William Beebe</A></P><TABLE border="1" cellspacing="0"><TR><TD bgcolor="#f0f0f0" valign="top" width="20%"><DIV class="book">
+  Index<BR>
+  <A href="downloads.html">Downloads</A><BR>
+  <A href="installation.html">Installation</A><BR>
+  <A href="cvs.html">The source repository</A><BR>
+  <A href="contrib.html">Contributors</A><BR>
+  <A href="contact.html">Mail-lists</A><BR>
+  <A href="volunteers.html">Volunteers</A><BR>
+<HR>
+  <A href="features.html">Features</A><BR>
+  <A href="features-wm.html">Window Managers</A><BR>
+  <A href="features-skins.html">Skins</A><BR>
+  <A href="future.html">Where Jesktop is heading</A><BR>
+  <A href="builtinapps.html">Built-in applications</A><BR>
+  <A href="multilicense.html">Multi-license environment</A><BR>
+  <A href="hosts.html">Host operating systems</A><BR>  
+  <A href="tools.html">Tools for building Jesktop</A><BR>    
+<HR>
+  <A href="developer/index.html">Developer Docs</A><BR>
+<HR>
+  <A href="faq.html">FAQ</A><BR>
+  <A href="changes.html">Changes</A><BR>
+  <A href="bugparade.html">Sun's Bug Parade</A><BR>
+  <A href="todo.html">Todo</A><BR>
+</DIV></TD><TD valign="top" width="80%"><DOCUMENT>
+  
+  <BODY>
+    <H1>What is it?</H1><DIV class="s1">
+      <P>
+      	The Jesktop project is a desktop system written in Java that can have GUI applications installed into it.  It is semi-dependant upon <A href="http://www.nanocontainer.org">NanoContainer</A> which is a component framework at Codehaus.  <A href="http://www.nanocontainer.org">NanoContainer</A> and Constructor Dependency Injection are going to change the way we think of Java based component computing.
+      </P>
+      <P>
+      	Jesktop has been under construction since November 2000.  It's team was founded by people building William's Portable Java Environment (PJE) since early 2000.
+      </P>
+
+    </DIV>
+    <H1>Jesktop's Goals</H1><DIV class="s1">
+      <UL>
+        <LI>
+          To have a fully functional Java desktop environment running on a fully functional Java operating system that is portable across a number of host operating systems, or if there is JDK support in a BIOS layer, without a host operating system.
+        </LI>
+        <LI>
+          To have a single CD installation of Linux (or other Java capable OS) without it's own applications, but with NanoContainer, Jesktop and many Java apps pre-configured.
+        </LI>
+        <LI>
+          To see the Jesktop and NanoContainer used widely by Java enthusiasts and deployed on yet to be created Network appliances and palm sized devices (when palm sized devices support J2SE).  That's right, we see this running on small devices.  The attraction to hardware manufactureres is obvious - a standard open source OS layer that can support multiple applications safely.
+        </LI>
+        <LI>
+          To see thousands of GPL, MPL, SPL, Commercial etc. etc. apps runnable inside Jesktop.  All will be hot installable, reinstallable and de-installable.  No reboot/restart necessary.  No questions asked.
+        </LI>
+      </UL>
+    </DIV>
+    <H1>Why Java?</H1><DIV class="s1">
+      <P>
+        Simply put, Java allows a number of different hardware chipsets and configurations to run the same &quot;executable&quot;.  It allows those multitude of configurations to sepcify their own contstraints (Java's exceptionally fine grained permissions architecture) for applications that are loaded into the machine and <STRONG>know</STRONG> that app, never before seen by that machine can <STRONG>never</STRONG> exceed it's authority.
+      </P>
+    </DIV>
+    <H1>Targetted devices</H1><DIV class="s1">
+      <P>
+        Assuming that the hardware power needed to run the JVM is available sometime soon, we see all of the following being able to have Jesktop installed:
+      </P>
+      <UL>
+        <LI>
+          Mobile phones.
+        </LI>
+        <LI>
+          Personal Digital Assitants.
+        </LI>
+        <LI>
+          Network/Internet applicances.
+        </LI>
+        <LI>
+          Notebooks, PCs, Workstations.
+        </LI>
+        <LI>
+          Games machines like the Sony Playstation2
+        </LI>        
+      </UL>
+      <P>
+        You may want to checkout <A href="http://www.savaje.com">SAVAJE</A> who are doing something very similar, but commercial. 
+      </P>
+    </DIV>
+    <H1>Approach</H1><DIV class="s1">
+      <P>
+	Jesktop and NanoContainer work within the confines of Sun's JDK implementation. If there are classes needed that are not supplied by the JDK, then they are written either as part of the project or in a seperate jar. We are not seeking to replace or re-write JDK packages, we'll use what Sun provide. If there is something that is needed (in our opinion) in the JDK, then we'll use the bug parade and community process to raise the issue. We are not seeking to use clean-room JVMs, we'll use virtual machines from Sun, IBM, Blackdown etc as long as they are J2SE compatible. We are not trying to coerce traditional main() applications to run inside Jesktop. For various reasons, we have specified a different (but not incompatible) mechanism than the standalone &quot;main&quot; concept.
+      </P>
+    </DIV>
+    <H1>Notice</H1><DIV class="s1">
+      <P>
+      	<STRONG>WARNING: This software is not unit tested status at the moment.  A lot works, but there are usability issues for some of the apps that are built in or bundled.  Please don't expect a bullet-proof experience at this stage, it's just a work in progress.  Help needed to work on this!!!!</STRONG>
+      </P>
+    </DIV>
+    <H1>Available Resources</H1><DIV class="s1">
+      <UL>
+        <LI>
+          <A href="http://jesktop.sourceforge.net/api/index.html">JavaDocs</A>
+        </LI>
+        <LI>
+          <A href="http://www.nanocontainer.org">NanoContainer</A>
+        </LI>
+        <LI>
+          <A href="http://www.geocities.com/bill_beebe/cc10.html">William's history of PJE and Jesktop pages</A>
+        </LI>
+      </UL>
+    </DIV>
+  </BODY>
+  
+</DOCUMENT></TD></TR></TABLE><P class="legal">
+      Copyright (c) 2004 The Jesktop Project Committers. All rights reserved.
+    <BR><CENTER><TABLE><TR><TD>
+              
+              <A href="http://sourceforge.net"><IMG alt="SourceForge Logo" border="0" height="31" src="" width="88"></A></TD><TD><A href="http://sourceforge.net/projects/jesktop"></A></TD></TR></TABLE></CENTER></P></BODY></HTML>

@@ -1,0 +1,114 @@
+<HTML><HEAD><TITLE>Jesktop Developer Documentation</TITLE><LINK href="resources/simple.css" rel="stylesheet" title="Simple Style" type="text/css"></HEAD><BODY><TABLE border="0" cellpadding="0" cellspacing="0"><TR><TD width="100%"><P class="title"><STRONG>Jesktop Developer Documentation</STRONG><BR><EM>How to make Applications</EM></P></TD><TD valign="top"><CENTER><IMG src="resources/jesktop-banner.jpg"><BR><IMG src="resources/TheJavaDesktop.jpg"></CENTER></TD></TR></TABLE><P class="author">
+            by
+            <A href="mailto:Paul_Hammant@yahoo.com">Paul Hammant</A></P><TABLE border="1" cellspacing="0"><TR><TD bgcolor="#f0f0f0" valign="top" width="20%"><DIV class="book">
+  <A href="index.html">Index</A><BR>
+  <A href="constraints.html">Programming Constraints</A><BR>
+  Applications<BR>
+  <A href="frimble.html">Frimble</A><BR>
+  <A href="javawebstart.html">Java Web Start</A><BR>
+  <A href="decorators.html">Decorators</A><BR>
+  <A href="applications2.html">Advanced Apps</A><BR>
+  <A href="mainfests.html">Manifests</A><BR>
+  <A href="classdiags.html">Class Diagrams</A><BR>
+</DIV></TD><TD valign="top" width="80%"><DOCUMENT>
+  
+  <BODY>
+    <H1>First of all</H1><DIV class="s1">
+      <P>
+	Making an application compatible with Jesktop does not mean it has to only be runnable on Jesktop.  It can still have the ability to run from the command line and a full &quot;mainable&quot; application.  What we outline here is a way of coding the application so that it can run in both ways from one code base.  There are a number of things you should not do, but they are easy to adjust to.  Just look at how many pre-existing applications we have ported to Jesktop - it can't be that hard.
+      </P>
+    </DIV>
+    <H1>Constraints</H1><DIV class="s1">
+      <P>
+        Take a look at the <A href="constraints.html">constraints</A> page, to see tricks and tips for coding an application to be Jesktop compatible.
+      </P>
+    </DIV>
+    <H1>Frimble (or not)</H1><DIV class="s1">
+      <P>
+	If you need to interact with the Frame for the app, then you should inplement Frimble functionalily (still compatible with the standalone runtime environment).  The the <A href="frimble.html">Frimble</A> documentation.  If you don't need a title, menu, close event consciousness, then JPanel is enough to extend.
+      </P>
+    </DIV>
+    <H1>applications.xml - a config file for a jar.</H1><DIV class="s1">
+      <P>
+	The app must be distibuted in a jar that contains all that is needed for the application to run inside Jesktop.  This includes classes and resources.  For GPL applications for legal reasons you should include the source too (as opposed to making it available on a website).  The final thing that Jesktop needs is an applications.xml file that contains packaging instructions for Jesktop to pick up on as it installs applications.  That file should exist inside a directory called JESKTOP-INF.  This is insiped by Sun's specified standard for WAR files, with the exception that we have avoided attibutes and elements called name as they are confusing.  Here is the example:
+      </P>
+      <PRE>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;applications&gt;
+  &lt;application&gt;
+    &lt;display-name&gt;Julia Set Animation&lt;/display-name&gt;
+    &lt;launchable-target-name&gt;Demos/Julia3&lt;/launchable-target-name&gt;
+    &lt;class&gt;org.jesktop.demos.julia3.Julia3Wrapper&lt;/class&gt;
+  &lt;/application&gt;
+  &lt;application&gt;
+    &lt;display-name&gt;Mondrian Art Thingy&lt;/display-name&gt;
+    &lt;launchable-target-name&gt;Demos/Mondrian&lt;/launchable-target-name&gt;
+    &lt;class&gt;org.jesktop.demos.mondrian.Mondrian&lt;/class&gt;
+  &lt;/application&gt;
+  &lt;application&gt;
+    &lt;display-name&gt;Warped Image Manipulator&lt;/display-name&gt;
+    &lt;launchable-target-name&gt;Demos/AlexWarp&lt;/launchable-target-name&gt;
+    &lt;class&gt;org.jesktop.demos.alexwarp.AlexWarpWrapper&lt;/class&gt;
+  &lt;/application&gt;
+&lt;/applications&gt;
+      </PRE>
+      <P>
+        Shown here is the packaging for the demos that we ship with Jesktop.  A <EM>display-name</EM> that will be used for presentation (TODO-internationalisation).  A <EM>target-name</EM> that is used as a unique name for the app and a <EM>class</EM> to instantiate.  As you can see here, it is possible to have many apps in one jar.  This is as simple as it gets for the applications.xml file.
+      </P>
+    </DIV>
+    <H1>applications.xml - A more complex example</H1><DIV class="s1">
+      <P>
+        Below is the applications.xml file used for Horstscape.
+      </P>
+    <PRE>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;applications&gt;
+  &lt;!--
+  &lt;default-application target-name=&quot;Tools/Browsers/Commercial/HorstScape&quot;
+    icon32=&quot;horstscape/earth32.gif&quot;
+    icon16=&quot;horstscape/earth16.gif&quot;/&gt;
+  --&gt;
+  &lt;application&gt;
+    &lt;display-name&gt;HorstScape&lt;/display-name&gt;
+    &lt;launchable-target-name&gt;Tools/Browsers/Commercial/HorstScape&lt;/launchable-target-name&gt;
+    &lt;class&gt;horstscape.Browser&lt;/class&gt;
+    &lt;application-config-file&gt;horstscape/HorstScape.xml&lt;/application-config-file&gt;
+  &lt;/application&gt;
+  &lt;additional-jars&gt;
+    &lt;!-- &lt;jar where=&quot;remote&quot;&gt;jar:http://home.earthlink.net/~hheister/htmlwindow/
+                                      HTMLWindowDemo_Java2.zip!/HTMLWindow.jar&lt;/jar&gt; --&gt;
+    &lt;jar where=&quot;contained&quot;&gt;lib/HTMLWindow.jar&lt;/jar&gt;
+  &lt;/additional-jars&gt;
+&lt;/applications&gt;
+    </PRE>
+      <P>
+        This intorduces three things:
+      </P>
+      <OL>
+        <LI><STRONG>default-application</STRONG>  This is what will be launched if the jar file is double clicked in the Windows style Explorer tool.  Also as attribles unde that element are the icons to use for the app.</LI>
+        <LI><STRONG>additional-jars</STRONG>  These are the jars that Jesktop should get that are part of the application.  The one that is specified there is &quot;contained&quot; in that it is inside the main jar.  Commented out is the eperimental <EM>remote</EM> jar.  This would mean that Jesktop could go and get the jar from the remote location and automatically mount it for use along side the installed application. It's commented out because of the one of the bugs that we'd like Sun to give some attention to.  See <A href="http://jesktop.sourceforge.net/developer/bugparade.html">Bug two on this page.</A></LI>
+        <LI><STRONG>application-config-file</STRONG> this is a config file specifically for the application.  At this stage it's optional.</LI>
+      </OL>
+    </DIV>
+    <H1>Application specific config file</H1><DIV class="s1">
+      <P>
+        Below is the Horstscape.xml for the application of the same name:
+      </P>
+    <PRE>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;application&gt;
+  &lt;icons icon32=&quot;horstscape/earth32.gif&quot;
+    icon16=&quot;horstscape/earth16.gif&quot; /&gt;
+&lt;/application&gt;
+    </PRE>
+      <P>
+        It shows the gifs that can be used as icons for the app.  There is no set loacation for this file within the jar.
+      </P>
+    </DIV>
+  </BODY>
+  
+</DOCUMENT></TD></TR></TABLE><P class="legal">
+      Copyright (c) 2004 The Jesktop Project Committers. All rights reserved.
+    <BR><CENTER><TABLE><TR><TD>
+              
+              <A href="http://sourceforge.net"><IMG alt="SourceForge Logo" border="0" height="0" src="" width="0"></A></TD><TD><A href="http://sourceforge.net/projects/jesktop"></A></TD></TR></TABLE></CENTER></P></BODY></HTML>

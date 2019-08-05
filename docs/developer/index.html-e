@@ -1,0 +1,45 @@
+<HTML><HEAD><TITLE>Jesktop Developer Documentation</TITLE><LINK href="resources/simple.css" rel="stylesheet" title="Simple Style" type="text/css"></HEAD><BODY><TABLE border="0" cellpadding="0" cellspacing="0"><TR><TD width="100%"><P class="title"><STRONG>Jesktop Developer Documentation</STRONG><BR><EM>Introduction</EM></P></TD><TD valign="top"><CENTER><IMG src="resources/jesktop-banner.jpg"><BR><IMG src="resources/TheJavaDesktop.jpg"></CENTER></TD></TR></TABLE><P class="author">
+            by
+            <A href="mailto:Paul_Hammant@yahoo.com">Paul Hammant</A>, <A href="mailto:bill_beebe@yahoo.com">William Beebe</A></P><TABLE border="1" cellspacing="0"><TR><TD bgcolor="#f0f0f0" valign="top" width="20%"><DIV class="book">
+  Index<BR>
+  <A href="constraints.html">Programming Constraints</A><BR>
+  <A href="applications.html">Applications</A><BR>
+  <A href="frimble.html">Frimble</A><BR>
+  <A href="javawebstart.html">Java Web Start</A><BR>
+  <A href="decorators.html">Decorators</A><BR>
+  <A href="applications2.html">Advanced Apps</A><BR>
+  <A href="mainfests.html">Manifests</A><BR>
+  <A href="classdiags.html">Class Diagrams</A><BR>
+</DIV></TD><TD valign="top" width="80%"><DOCUMENT>
+  
+  <BODY>
+    <H1>Overview</H1><DIV class="s1">
+      <P>
+      	Applications for use with Jesktop must be packaged in Jar files an contain a manifest of sorts detailing the applications that the jar contains.  The applications themselves must be Swing based and have a few programming constraints.
+      </P>
+      <P>
+        Applications can be written specifically for Jesktop or can be dual mode.  That is where they can run from the command line (e.g. java -jar -myapp.jar) and run inside Jesktop.  The app must be developed carefully so that it can run as both standalone and Jesktop dependant.
+      </P>
+    </DIV>
+    <H1>Levels of compatability</H1><DIV class="s1">
+      <P>
+        <STRONG>Level 1 - JPanel.</STRONG> If your main GUI class is a plain JPanel, that needs no menu,title or window events, just have an empty constructor and keep all your JFrame logic in the main() method (which won't be called). Include the JESKTOP-INF/applications.xml file to tell Jesktop what to launch and it should be installable.  This is a really simple target to aim at.
+      </P>
+      <P>
+        <STRONG>Level 2 - Frimble.</STRONG> As above, but your apps needs a Frame like container for Title, menu and Window Events.  Implement the Frimble logic - see FrimbleDemo as well as having and empty constructor, and the applications.xml descriptor.  Your app can be dual mode - it can run from the command line and inside Jesktop.
+      </P>
+      <P>
+        <STRONG>Level 3 - Jesktop aware.</STRONG> Advice as for (2) above.  Also implement DesktopKernelAware.  This makes allows the app to interact with the Kernel for many services.  Bewarned that this interface is evolving quite a lot at the moment.  The build in Windows style explorer is an example of this.  As is SimpleInstaller.
+      </P>
+    </DIV>    
+    <H1>Further reading</H1><DIV class="s1">    
+      <P>See the documentation on Frimble.  An example of that is the FrimbleDemo class.</P>
+      <P>See our list of contraints to coding.</P>
+    </DIV>        
+  </BODY>
+  
+</DOCUMENT></TD></TR></TABLE><P class="legal">
+      Copyright (c) 2004 The Jesktop Project Committers. All rights reserved.
+    <BR><CENTER><TABLE><TR><TD>
+              
+              <A href="http://sourceforge.net"><IMG alt="SourceForge Logo" border="0" height="31" src="" width="88"></A></TD><TD><A href="http://sourceforge.net/projects/jesktop"></A></TD></TR></TABLE></CENTER></P></BODY></HTML>
